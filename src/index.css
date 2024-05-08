@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Bungee+Spice&family=Caveat&family=Combo&family=Concert+One&family=Dancing+Script&family=DynaPuff:wght@400;500&family=Lexend:wght@500&family=Lobster&family=Pacifico&family=Permanent+Marker&family=Poppins:wght@100&family=Qwitcher+Grypen&family=Roboto:ital,wght@1,100&family=Rubik:wght@300&family=Silkscreen&family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cookie&family=Indie+Flower&family=Kolker+Brush&family=Paytone+One&family=Roboto:wght@100&family=Shalimar&family=Titan+One&family=Varela+Round&family=Zen+Antique&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cookie&family=Indie+Flower&family=Kdam+Thmor+Pro&family=Kolker+Brush&family=Montserrat:ital@1&family=Paytone+One&family=Poppins&family=Roboto:wght@100&family=Shalimar&family=Titan+One&family=Varela+Round&family=Zen+Antique&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Belanosima:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@900&display=swap");
+@font-face {
+  font-family: rosiana-font;
+  src: url(./rosiana-font/RosianaRegular-JRxEB.ttf);
+  font-weight: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lexend", sans-serif;
+}
+html {
+  font-size: 62.5%;
+}
+:root {
+  --primary-background-color: #f5f5f5;
+  --secondary-background-color: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(82, 57, 233, 0.1) 0,
+    rgba(147, 115, 238, 0) 100%
+  );
+  --card-primary-color: #ffffff;
+  --card-secondary-color: transparent;
+  --color: #101010;
+  --headTextColor: #000000;
+  --btn-text-color: #00abe1;
+  --btn-bg-color: #00ace13a;
+  --black-white: #ffffff;
+}
+.darkMode {
+  --primary-background-color: #0d0a1a;
+  --secondary-background-color: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(82, 57, 233, 0.1) 0,
+    rgba(147, 115, 238, 0) 100%
+  );
+  --card-primary-color: linear-gradient(
+      117.75deg,
+      rgba(59, 51, 102, 0) 32.76%,
+      rgba(59, 51, 102, 0.5) 100%
+    ),
+    linear-gradient(
+      117.75deg,
+      rgba(59, 51, 102, 0.5) 0%,
+      rgba(36, 36, 77, 0) 67.24%,
+      rgba(43, 36, 77, 0) 67.24%
+    );
+  --card-secondary-color: rgba(17, 14, 36, 0.8);
+  --color: hsla(249, 100%, 96%, 0.9);
+  --headTextColor: rgb(250 205 61);
+  --btn-text-color: #facd3d;
+  --btn-bg-color: #facd3d2e;
+  --black-white: #101010;
+}
