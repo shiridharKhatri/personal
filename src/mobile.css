@@ -23,7 +23,7 @@
   }
   nav .otherSec form button {
     color: var(--btn-text-color);
-}
+  }
   .otherSec .closeSearch {
     display: none;
   }
@@ -79,12 +79,12 @@
     border-radius: 0 0 3rem 0;
     justify-content: start;
   }
-  nav ul .sideMenuContainer{
+  nav ul .sideMenuContainer {
     width: 100%;
     overflow-y: scroll;
     height: auto;
   }
-  nav ul .sideMenuContainer::-webkit-scrollbar{
+  nav ul .sideMenuContainer::-webkit-scrollbar {
     display: none;
   }
   section.BelowButton {
@@ -394,35 +394,42 @@
     height: 15rem;
     width: 15rem;
   }
-  section.blogs .blogContainer{
-    display: grid; 
+  section.blogs .blogContainer {
+    display: grid;
 
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
-    
+
     height: 65rem;
     width: 100%;
   }
-  section.blogs .blogContainer .blogCards:last-child{
-    background-color: #9D6BE5; 
+  section.blogs .blogContainer .blogCards:last-child {
+    background-color: #9d6be5;
     grid-row-start: 3;
     grid-column-start: 1;
- 
+
     grid-row-end: 4;
     grid-column-end: 4;
     /* height: 30rem; */
   }
   section.blogs .blogContainer .blogCards:first-child {
-    background-color: #687F97; 
-   grid-row-start: 1;
-   grid-column-start: 1;
+    background-color: #687f97;
+    grid-row-start: 1;
+    grid-column-start: 1;
 
-   grid-row-end: 3;
-   grid-column-end: 3;
+    grid-row-end: 3;
+    grid-column-end: 3;
   }
-  section.blogs .blogContainer .blogCards:last-child .details h2, section.blogs .blogContainer .blogCards:first-child .details h2 {
+  section.blogs .blogContainer .blogCards:last-child .details h2,
+  section.blogs .blogContainer .blogCards:first-child .details h2 {
     font-size: 2rem;
-}
+  }
+  section.indBlog .blogContainer {
+    width: 95%;
+  }
+  section.indBlog .blogContainer h2 {
+    font-size: 2rem;
+  }
 }
 @media (max-width: 460px) {
   #headerId .headContainer img {
@@ -1043,35 +1050,36 @@
     width: 100%;
     margin-bottom: 3rem;
   }
-  section.blogs .blogContainer .blogCards:last-child .details h2, section.blogs .blogContainer .blogCards:first-child .details h2 {
+  section.blogs .blogContainer .blogCards:last-child .details h2,
+  section.blogs .blogContainer .blogCards:first-child .details h2 {
     font-size: 1.5rem;
     width: 90%;
-}
-section.blogs .blogContainer .blogCards .details h2 {
-  color: #ffffff;
-  font-size: 1.1rem;
-  width: 90%;
-}
-section.blogs .blogContainer .blogCards .details button {
-  padding: 0.5rem 1rem 0.5rem 1.5rem;
-  margin-top: 1rem;
-  border: none;
-  border-radius: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 3.5rem;
-  width: 11rem;
-  cursor: pointer;
-  color: #ffffff;
-  font-size: 1.2rem;
-}
-section.protfolio .details .icons{
-  flex-wrap: wrap;
-}
-section.protfolio .details .icons h4{
-  margin: .5rem;
-}
+  }
+  section.blogs .blogContainer .blogCards .details h2 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    width: 90%;
+  }
+  section.blogs .blogContainer .blogCards .details button {
+    padding: 0.5rem 1rem 0.5rem 1.5rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.5rem;
+    width: 11rem;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 1.2rem;
+  }
+  section.protfolio .details .icons {
+    flex-wrap: wrap;
+  }
+  section.protfolio .details .icons h4 {
+    margin: 0.5rem;
+  }
 }
 @media (max-width: 400px) {
 }

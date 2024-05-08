@@ -1365,7 +1365,9 @@ section.protfolio .details {
   flex-direction: column;
   justify-content: center;
 }
-
+section.blogs .details a{
+  text-decoration: none;
+}
 section.protfolio .right {
   width: 50%;
   height: 100vh;
@@ -1697,18 +1699,18 @@ section.blogs .blogContainer .loading {
   background: rgb(122, 122, 147);
   box-shadow: none;
 }
-section.blogs .blogContainer .loading .details{
+section.blogs .blogContainer .loading .details {
   width: 90%;
 }
-section.blogs .blogContainer .loading h2{
+section.blogs .blogContainer .loading h2 {
   background: #445;
   height: 2rem;
   width: 100%;
   border-radius: 3rem;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   animation: loaderBlog 2s linear infinite;
 }
-section.blogs .blogContainer .loading button{
+section.blogs .blogContainer .loading button {
   width: 20rem;
   height: 4rem;
   border-radius: 3rem;
@@ -1716,19 +1718,19 @@ section.blogs .blogContainer .loading button{
   animation: loaderBlog 2s linear infinite;
 }
 @keyframes loaderBlog {
-  0%{
+  0% {
     background: #445;
   }
-  25%{
+  25% {
     background: rgb(93, 93, 117);
   }
-  50%{
+  50% {
     background: rgb(113, 113, 132);
   }
-  75%{
+  75% {
     background: rgb(93, 93, 117);
   }
-  100%{
+  100% {
     background: #445;
   }
 }
@@ -1780,4 +1782,122 @@ section.blogs .blogContainer .blogCards:last-child {
 
   grid-row-end: 3;
   grid-column-end: 5;
+}
+section.indBlog .blogContainer {
+  width: 70%;
+  margin-bottom: 10rem;
+}
+section.indBlog .blogContainer h2 {
+  font-size: 3rem;
+  margin: 1.5rem 0;
+  line-height: 1.5;
+  color: var(--color);
+}
+section.indBlog .blogContainer p {
+  margin-top: 3rem;
+  line-height: 2;
+  font-size: 1.5rem;
+  color: var(--color);
+}
+section.indBlog .blogContainer .points h3 {
+  margin-top: 4rem;
+  font-size: 2.5rem;
+  color: var(--color);
+}
+section.indBlog .blogContainer .points ul {
+  list-style: none;
+}
+section.indBlog .blogContainer .points ul li span {
+  font-weight: bold;
+  margin-right: 1rem;
+  font-size: 1.4rem;
+}
+section.indBlog .blogContainer .points ul li {
+  margin: 2rem 0;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--color);
+  line-height: 1.8;
+}
+
+section.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+section.loading .loader {
+  height: 30px;
+  display: inline-block;
+}
+
+section.loading .loader > div {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  box-shadow: 0 0 10px var(--btn-bg-color);
+  background: var(--btn-text-color);
+  float: left;
+  margin: 5px;
+  transform: scale(2);
+}
+
+section.loading .loader > div:nth-child(1) {
+  animation: anm-BL-53-move1 1s infinite linear;
+}
+
+section.loading .loader > div:nth-child(2) {
+  animation: anm-BL-53-move2 1s infinite linear;
+  animation-delay: 0.2s;
+}
+
+section.loading .loader > div:nth-child(3) {
+  animation: anm-BL-53-move3 1s infinite linear;
+  animation-delay: 0.3s;
+}
+
+section.loading .loader > div:nth-child(4) {
+  animation: anm-BL-53-move4 1s infinite linear;
+  animation-delay: 0.4s;
+}
+
+section.loading .loader > div:nth-child(5) {
+  animation: anm-BL-53-move5 1s infinite linear;
+  animation-delay: 0.5s;
+}
+
+@keyframes anm-BL-53-move1 {
+  50% {
+    background: var(--btn-text-color);
+    transform: scale(1);
+  }
+}
+
+@keyframes anm-BL-53-move2 {
+  50% {
+    background: var(--btn-text-color);
+    transform: scale(1);
+  }
+}
+
+@keyframes anm-BL-53-move3 {
+  50% {
+    background: var(--btn-text-color);
+    transform: scale(1);
+  }
+}
+
+@keyframes anm-BL-53-move4 {
+  50% {
+    background: var(--btn-text-color);
+    transform: scale(1);
+  }
+}
+
+@keyframes anm-BL-53-move5 {
+  50% {
+    background: var(--btn-text-color);
+    transform: scale(1);
+  }
 }

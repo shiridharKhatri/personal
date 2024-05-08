@@ -9,6 +9,7 @@ import {
   TbIcons,
   SiIcons,
 } from "../tools/icons";
+import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
   const themeRef = useRef(null);
@@ -83,7 +84,9 @@ export default function Navbar(props) {
       className={isScrolled ? "navbar-scrolled" : "navbar"}
     >
       <div id="logoFirst" className="logo">
-        <img src="/logo.png" alt="logo" />
+        <Link to={`/`}>
+          <img src="/logo.png" alt="logo" />
+        </Link>
       </div>
 
       <div className="otherSec" id="formSecSearch">

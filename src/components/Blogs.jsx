@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BiIcons, BsIcons } from "../tools/icons";
+import { Link } from "react-router-dom";
 
 export default function Blogs() {
   const [blogs, setBlogs] = useState([]);
@@ -44,10 +45,11 @@ export default function Blogs() {
                 >
                   <div className="details">
                     <h2>{e.title}</h2>
-                    <button style={{ background: e.color }}>
+                    <Link to={`blog/${e._id}/${e.title}`} ><button style={{ background: e.color }}>
                       Read more&nbsp;
                       <BiIcons.BiChevronRight />
                     </button>
+                    </Link>
                   </div>
                 </div>
               );
