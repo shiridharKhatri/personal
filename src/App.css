@@ -1678,7 +1678,7 @@ section.blogs .blogContainer {
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: .5rem;
+  gap: 0.5rem;
   height: 50rem;
   width: 93%;
   margin-bottom: 10rem;
@@ -1689,10 +1689,48 @@ section.blogs .blogContainer .blogCards {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  box-shadow: -23px -200px 187px -67px rgba(0,0,0,1) inset;
-  -webkit-box-shadow: -23px -200px 187px -67px rgba(0,0,0,1) inset;
-  -moz-box-shadow: -23px -200px 187px -67px rgba(0,0,0,1) inset;
-
+  box-shadow: -23px -200px 187px -67px rgba(0, 0, 0, 1) inset;
+  -webkit-box-shadow: -23px -200px 187px -67px rgba(0, 0, 0, 1) inset;
+  -moz-box-shadow: -23px -200px 187px -67px rgba(0, 0, 0, 1) inset;
+}
+section.blogs .blogContainer .loading {
+  background: rgb(122, 122, 147);
+  box-shadow: none;
+}
+section.blogs .blogContainer .loading .details{
+  width: 90%;
+}
+section.blogs .blogContainer .loading h2{
+  background: #445;
+  height: 2rem;
+  width: 100%;
+  border-radius: 3rem;
+  margin-top: .5rem;
+  animation: loaderBlog 2s linear infinite;
+}
+section.blogs .blogContainer .loading button{
+  width: 20rem;
+  height: 4rem;
+  border-radius: 3rem;
+  background: #445;
+  animation: loaderBlog 2s linear infinite;
+}
+@keyframes loaderBlog {
+  0%{
+    background: #445;
+  }
+  25%{
+    background: rgb(93, 93, 117);
+  }
+  50%{
+    background: rgb(113, 113, 132);
+  }
+  75%{
+    background: rgb(93, 93, 117);
+  }
+  100%{
+    background: #445;
+  }
 }
 section.blogs .blogContainer .blogCards .details {
   position: absolute;
@@ -1731,7 +1769,10 @@ section.blogs .blogContainer .blogCards:first-child {
   grid-column-start: 1;
   grid-row-end: 3;
   grid-column-end: 3;
-  box-shadow: -23px -340px 235px -90px rgba(0,0,0,1) inset;
+  box-shadow: -23px -340px 235px -90px rgba(0, 0, 0, 1) inset;
+}
+section.blogs .blogContainer .loading:first-child {
+  box-shadow: none;
 }
 section.blogs .blogContainer .blogCards:last-child {
   grid-row-start: 2;
