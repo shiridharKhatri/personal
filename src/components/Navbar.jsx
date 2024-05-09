@@ -81,9 +81,8 @@ export default function Navbar(props) {
   }, []);
   const searchBlogs = (e) => {
     e.preventDefault();
-    console.log(inpVal)
+    console.log(inpVal);
     navigate(`/blog/${inpVal}`);
-    
   };
   return (
     <nav
@@ -107,7 +106,7 @@ export default function Navbar(props) {
             type="search"
             value={inpVal}
             onChange={onChangeState}
-            placeholder="Search..."
+            placeholder="Search blogs..."
           />
           <button name="Search" onClick={searchBlogs}>
             <BiIcons.BiSearch />
@@ -118,9 +117,16 @@ export default function Navbar(props) {
             type="search"
             value={inpVal}
             onChange={onChangeState}
-            placeholder="Search..."
+            placeholder="Search blogs..."
           />
-          <button name="Search" style={{background:"var(--btn-text-color)", color:" var(--black-white)"}} onClick={searchBlogs}>
+          <button
+            name="Search"
+            style={{
+              background: "var(--btn-text-color)",
+              color: " var(--black-white)",
+            }}
+            onClick={searchBlogs}
+          >
             <BiIcons.BiSearch />
           </button>
         </form>
@@ -222,7 +228,7 @@ export default function Navbar(props) {
                 <span>
                   <GoIcons.GoFileCode />
                 </span>
-                Free code (For learners)
+                Free code 
               </li>
               <li>
                 <span>

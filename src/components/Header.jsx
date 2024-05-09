@@ -1,9 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { CgIcons, MdIcons } from "../tools/icons";
+import moment from "moment";
 export default function Header() {
   const scaleOne = useRef(null);
   const scaleTwo = useRef(null);
   const scaleThree = useRef(null);
+  const [greeting, setGreeting] = useState("");
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 95) {
@@ -36,12 +38,31 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  useEffect(() => {
+    const greetingText = () => {
+      let currentTime = moment();
+      let currentHour = currentTime.hour();
+      setGreeting(currentHour);
+      if (currentHour >= 6 && currentHour < 12) {
+        setGreeting("morning 🌅");
+      } else if (currentHour >= 12 && currentHour < 18) {
+        setGreeting("afternoon ⛅");
+      } else if (currentHour >= 18 && currentHour < 21) {
+        setGreeting("evening 🌇");
+      } else {
+        setGreeting("night 🌃");
+      }
+    };
+    greetingText();
+  }, []);
+
   return (
     <header id="headerId">
       <div className="headContainer">
         <div className="text">
-          <h1 style={{ fontSize: "4rem", width: "35rem" }}>
-            Hi, I am <span>Shiridhar Khatri</span>
+          <h1>Hi, Good{greeting}!</h1>
+          <h1 style={{ fontSize: "2rem", width: "40rem" }}>
+            <span>Shiridhar Khatri</span>
           </h1>
           <h1>Web Developer/Designer</h1>
           <p>
@@ -51,7 +72,10 @@ export default function Header() {
             web apps.
           </p>
           <div className="buttons">
-            <a href="https://www.upwork.com/freelancers/shiridhark" target="_blank">
+            <a
+              href="https://www.upwork.com/freelancers/shiridhark"
+              target="_blank"
+            >
               <button style={{ color: "var(--black-white)" }}>Hire me</button>
             </a>
             <a href="/resume.pdf" target="_blank" title="Shiridhar-Resume">

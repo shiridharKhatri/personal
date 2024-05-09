@@ -159,7 +159,7 @@ nav .otherSec form #voice:hover {
   color: var(--btn-text-color);
 }
 nav .otherSec form input {
-  padding: 1.2rem;
+  padding: 1.2rem 1.2rem 1.2rem 2rem;
   outline: none;
   border-radius: 3rem 0 0 3rem;
   border: none;
@@ -309,6 +309,8 @@ nav ul li {
 }
 #headerId .headContainer .text h1 span {
   color: var(--btn-text-color);
+  font-size: 4.5rem !important;
+  
 }
 #headerId .headContainer .image {
   width: 58rem;
@@ -1802,7 +1804,7 @@ section.indBlog .blogContainer p {
   font-size: 1.5rem;
   color: var(--color);
 }
-section.indBlog .blogContainer p b{
+section.indBlog .blogContainer p b {
   font-size: 1.8rem;
   margin-right: 1rem;
 }

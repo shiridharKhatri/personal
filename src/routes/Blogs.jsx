@@ -65,9 +65,6 @@ export default function Blogs() {
                   blogs.points.slice(0, -1).map((e) => {
                     return (
                       <li key={e._id}>
-                        <span>
-                          <FaIcons.FaRegDotCircle />
-                        </span>
                         &nbsp;
                         <p>
                           <b>{e.title}:</b>&nbsp;{e.description}

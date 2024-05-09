@@ -28,7 +28,7 @@ export default function Blogs() {
   }, [host]);
   return (
     <section className="container blogs">
-      <h1 className="headText">Blogs</h1>
+      <h1 className="headText">Latest Blogs</h1>
       <div className="blogContainer">
         {success === true ? (
           <>
