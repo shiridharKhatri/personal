@@ -171,6 +171,10 @@ nav .otherSec form button {
   font-size: 1.7rem;
   background: transparent;
   cursor: pointer;
+
+  border-radius: 3rem;
+  width: 5rem;
+  border-radius: 1rem 3rem 3rem;
 }
 nav ul li {
   /* background-color: red; */
@@ -1365,7 +1369,7 @@ section.protfolio .details {
   flex-direction: column;
   justify-content: center;
 }
-section.blogs .details a{
+section.blogs .details a {
   text-decoration: none;
 }
 section.protfolio .right {
@@ -1816,7 +1820,7 @@ section.indBlog .blogContainer .points ul li {
   display: flex;
   justify-content: start;
 }
-section.indBlog .blogContainer .points ul li span{
+section.indBlog .blogContainer .points ul li span {
   font-size: 2rem;
   margin-right: 2rem;
 

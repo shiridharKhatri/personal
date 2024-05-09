@@ -21,7 +21,7 @@ export default function Blogs() {
         }
         const data = await response.json();
         setBlogs(data);
-        console.log(data)
+        console.log(data);
         if (data.success === true) {
           setLoader(false);
         } else {
@@ -52,41 +52,45 @@ export default function Blogs() {
         </section>
       ) : (
         <section ref={containerRef} className="container indBlog">
-          <h1 style={{marginBottom:"3rem"}} className="headText">{params.title}</h1>
-          <h3 style={{marginBottom:"8rem"}}>{blogs.total} Result found.</h3>
-          {blogs.results?.map((e)=>{
-            return <div 
-            key={e._id} className="blogContainer">
-            <img
-              style={{ width: "100%" }}
-              src={`${host}/img/${e.image}`}
-              alt="image"
-            />
-            <h2>{e.title}</h2>
-            <p>{e.description}</p>
-            <div className="points">
-              <h3>Some points:</h3>
-              <ul>
-                {Array.isArray(e.points) &&
-                  e.points.slice(0, -1).map((el) => {
-                    return (
-                      <li key={el._id}>
-                        <span>
-                          <FaIcons.FaRegDotCircle />
-                        </span>
-                        &nbsp;
-                        <p>
-                          <b>{el.title}:</b>&nbsp;{el.description}
-                        </p>
-                      </li>
-                    );
-                  })}
-              </ul>
-            </div>
-            <p style={{ fontWeight: "bold" }}>
-              {e.points[e.points?.length - 1].description}
-            </p>
-          </div>
+          <h1 style={{ marginBottom: "3rem" }} className="headText">
+            {params.title}
+          </h1>
+          <h3 style={{ marginBottom: "8rem" }}>{blogs.total} Result found.</h3>
+          {blogs.results?.map((e) => {
+            return (
+              <div key={e._id} className="blogContainer">
+                <img
+                  style={{ width: "100%" }}
+                  src={`${host}/img/${e.image}`}
+                  alt="image"
+                />
+                <h2>{e.title}</h2>
+                <p>{e.description}</p>
+                <div className="points">
+                  <h3>Some points:</h3>
+                  <ul>
+                    {Array.isArray(e.points) &&
+                      e.points.slice(0, -1).map((el) => {
+                        return (
+                          <li key={el._id}>
+                            <span style={{ color: e.color }}>
+                              <FaIcons.FaRegDotCircle />
+                            </span>
+                            &nbsp;
+                            <p>
+                              <b style={{ color: e.color }}>{el.title}:</b>
+                              &nbsp;{el.description}
+                            </p>
+                          </li>
+                        );
+                      })}
+                  </ul>
+                </div>
+                <p style={{ fontWeight: "bold" }}>
+                  {e.points[e.points?.length - 1].description}
+                </p>
+              </div>
+            );
           })}
         </section>
       )}

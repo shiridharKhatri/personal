@@ -120,7 +120,7 @@ export default function Navbar(props) {
             onChange={onChangeState}
             placeholder="Search..."
           />
-          <button name="Search" onClick={searchBlogs}>
+          <button name="Search" style={{background:"var(--btn-text-color)", color:" var(--black-white)"}} onClick={searchBlogs}>
             <BiIcons.BiSearch />
           </button>
         </form>
