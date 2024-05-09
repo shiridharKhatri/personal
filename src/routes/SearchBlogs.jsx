@@ -52,7 +52,7 @@ export default function Blogs() {
         </section>
       ) : (
         <section ref={containerRef} className="container indBlog">
-          <h1 style={{ marginBottom: "3rem" }} className="headText">
+          <h1 style={{ marginBottom: "3rem",marginTop:"12rem" }} className="headText">
             {params.title}
           </h1>
           <h3
