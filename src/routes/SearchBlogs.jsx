@@ -52,7 +52,10 @@ export default function Blogs() {
         </section>
       ) : (
         <section ref={containerRef} className="container indBlog">
-          <h1 style={{ marginBottom: "3rem",marginTop:"12rem" }} className="headText">
+          <h1
+            style={{ marginBottom: "3rem", marginTop: "12rem" }}
+            className="headText"
+          >
             {params.title}
           </h1>
           <h3
@@ -60,6 +63,7 @@ export default function Blogs() {
               marginBottom: "8rem",
               width: " 100%",
               textAlign: "center",
+              color: "var(--color)",
             }}
           >
             {blogs.total} Result found.
