@@ -13,12 +13,15 @@ export default function Blogs() {
   useEffect(() => {
     async function fetchItems() {
       try {
-        const response = await fetch(`${host}/blog/fetchBlog/${params.blogId}`);
+        const response = await fetch(
+          `${host}/blog/fetchBlogs/search?q=${params.title}`
+        );
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
         const data = await response.json();
-        setBlogs(data.blog);
+        setBlogs(data);
+        console.log(data)
         if (data.success === true) {
           setLoader(false);
         } else {
@@ -49,28 +52,31 @@ export default function Blogs() {
         </section>
       ) : (
         <section ref={containerRef} className="container indBlog">
-          <h1 className="headText">Blog</h1>
-          <div className="blogContainer">
+          <h1 style={{marginBottom:"3rem"}} className="headText">{params.title}</h1>
+          <h3 style={{marginBottom:"8rem"}}>{blogs.total} Result found.</h3>
+          {blogs.results?.map((e)=>{
+            return <div 
+            key={e._id} className="blogContainer">
             <img
               style={{ width: "100%" }}
-              src={`${host}/img/${blogs.image}`}
+              src={`${host}/img/${e.image}`}
               alt="image"
             />
-            <h2>{blogs.title}</h2>
-            <p>{blogs.description}</p>
+            <h2>{e.title}</h2>
+            <p>{e.description}</p>
             <div className="points">
               <h3>Some points:</h3>
               <ul>
-                {Array.isArray(blogs.points) &&
-                  blogs.points.slice(0, -1).map((e) => {
+                {Array.isArray(e.points) &&
+                  e.points.slice(0, -1).map((el) => {
                     return (
-                      <li key={e._id}>
+                      <li key={el._id}>
                         <span>
                           <FaIcons.FaRegDotCircle />
                         </span>
                         &nbsp;
                         <p>
-                          <b>{e.title}:</b>&nbsp;{e.description}
+                          <b>{el.title}:</b>&nbsp;{el.description}
                         </p>
                       </li>
                     );
@@ -78,9 +84,10 @@ export default function Blogs() {
               </ul>
             </div>
             <p style={{ fontWeight: "bold" }}>
-              {blogs.points[blogs.points?.length - 1].description}
+              {e.points[e.points?.length - 1].description}
             </p>
           </div>
+          })}
         </section>
       )}
     </>

@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import AOS from "aos";
 import { useEffect } from "react";
 import Blogs from "./routes/Blogs";
+import SearchBlogs from "./routes/SearchBlogs";
 function App() {
   const router = createBrowserRouter([
     {
@@ -12,8 +13,12 @@ function App() {
       element: <Root/>,
     },
     {
-      path: "blog/:blogId/:title",
+      path: "blogs/:blogId/:title",
       element: <Blogs/>,
+    },
+    {
+      path: "blog/:title",
+      element: <SearchBlogs/>,
     },
   ]);
   useEffect(() => {

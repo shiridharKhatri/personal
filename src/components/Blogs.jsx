@@ -45,7 +45,7 @@ export default function Blogs() {
                 >
                   <div className="details">
                     <h2>{e.title}</h2>
-                    <Link to={`blog/${e._id}/${e.title}`} ><button style={{ background: e.color }}>
+                    <Link to={`blogs/${e._id}/${e.title}`} ><button style={{ background: e.color }}>
                       Read more&nbsp;
                       <BiIcons.BiChevronRight />
                     </button>

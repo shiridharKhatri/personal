@@ -1794,7 +1794,6 @@ section.indBlog .blogContainer h2 {
   color: var(--color);
 }
 section.indBlog .blogContainer p {
-  margin-top: 3rem;
   line-height: 2;
   font-size: 1.5rem;
   color: var(--color);
@@ -1807,17 +1806,21 @@ section.indBlog .blogContainer .points h3 {
 section.indBlog .blogContainer .points ul {
   list-style: none;
 }
-section.indBlog .blogContainer .points ul li span {
-  font-weight: bold;
-  margin-right: 1rem;
-  font-size: 1.4rem;
-}
+
 section.indBlog .blogContainer .points ul li {
   margin: 2rem 0;
   font-size: 1.3rem;
   font-weight: 400;
   color: var(--color);
   line-height: 1.8;
+  display: flex;
+  justify-content: start;
+}
+section.indBlog .blogContainer .points ul li span{
+  font-size: 2rem;
+  margin-right: 2rem;
+
+  position: relative;
 }
 
 section.loading {

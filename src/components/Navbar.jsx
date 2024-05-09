@@ -9,10 +9,11 @@ import {
   TbIcons,
   SiIcons,
 } from "../tools/icons";
-import { Link } from "react-router-dom";
+import { Link, redirect, useNavigate } from "react-router-dom";
 
 export default function Navbar(props) {
   const themeRef = useRef(null);
+  const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDarkMode, setDarkMode] = useState(false);
   const [inpVal, setInpVal] = useState("");
@@ -78,6 +79,12 @@ export default function Navbar(props) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const searchBlogs = (e) => {
+    e.preventDefault();
+    console.log(inpVal)
+    navigate(`/blog/${inpVal}`);
+    
+  };
   return (
     <nav
       style={{ position: props.position, background: props.background }}
@@ -102,16 +109,8 @@ export default function Navbar(props) {
             onChange={onChangeState}
             placeholder="Search..."
           />
-          <button
-            name="Search"
-            onClick={(e) => {
-              e.preventDefault();
-            }}
-          >
+          <button name="Search" onClick={searchBlogs}>
             <BiIcons.BiSearch />
-          </button>
-          <button name="voice" id="voice">
-            <MdIcons.MdKeyboardVoice />
           </button>
         </form>
         <form id="hiddenInMobile">
@@ -121,16 +120,8 @@ export default function Navbar(props) {
             onChange={onChangeState}
             placeholder="Search..."
           />
-          <button
-            name="Search"
-            onClick={(e) => {
-              e.preventDefault();
-            }}
-          >
+          <button name="Search" onClick={searchBlogs}>
             <BiIcons.BiSearch />
-          </button>
-          <button name="voice" id="voice">
-            <MdIcons.MdKeyboardVoice />
           </button>
         </form>
         <ul id="sideMenu">
