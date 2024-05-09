@@ -1820,12 +1820,6 @@ section.indBlog .blogContainer .points ul li {
   display: flex;
   justify-content: start;
 }
-section.indBlog .blogContainer .points ul li span {
-  font-size: 2rem;
-  margin-right: 2rem;
-
-  position: relative;
-}
 
 section.loading {
   display: flex;

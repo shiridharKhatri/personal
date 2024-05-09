@@ -55,7 +55,15 @@ export default function Blogs() {
           <h1 style={{ marginBottom: "3rem" }} className="headText">
             {params.title}
           </h1>
-          <h3 style={{ marginBottom: "8rem" }}>{blogs.total} Result found.</h3>
+          <h3
+            style={{
+              marginBottom: "8rem",
+              width: " 100%",
+              textAlign: "center",
+            }}
+          >
+            {blogs.total} Result found.
+          </h3>
           {blogs.results?.map((e) => {
             return (
               <div key={e._id} className="blogContainer">
@@ -73,10 +81,6 @@ export default function Blogs() {
                       e.points.slice(0, -1).map((el) => {
                         return (
                           <li key={el._id}>
-                            <span style={{ color: e.color }}>
-                              <FaIcons.FaRegDotCircle />
-                            </span>
-                            &nbsp;
                             <p>
                               <b style={{ color: e.color }}>{el.title}:</b>
                               &nbsp;{el.description}
