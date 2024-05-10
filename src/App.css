@@ -310,7 +310,6 @@ nav ul li {
 #headerId .headContainer .text h1 span {
   color: var(--btn-text-color);
   font-size: 4.5rem !important;
-  
 }
 #headerId .headContainer .image {
   width: 58rem;
@@ -1907,4 +1906,60 @@ section.loading .loader > div:nth-child(5) {
     background: var(--btn-text-color);
     transform: scale(1);
   }
+}
+section.aboutme .aboutContainer {
+  display: flex;
+  width: 90%;
+  margin: 10rem 0 20rem 0;
+}
+section.aboutme .aboutContainer .image {
+  margin: 0 5rem 0 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+    height: 35rem;
+}
+section.aboutme .aboutContainer .image::before{
+  content: "";
+  position: absolute;
+  background: var(--btn-text-color);
+  height: 100%;
+  width: 100%;
+  right: -2.5rem;
+  bottom: -2.5rem;
+  z-index: -1;
+}
+section.aboutme .aboutContainer .image img {
+height: 100%;
+  border: .3rem solid var(--btn-text-color);
+}
+section.aboutme .aboutContainer .flexOne h2 {
+  font-size: 3rem;
+  color: var(--color);
+}
+section.aboutme .aboutContainer .flexOne p {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: var(--color);
+  text-align: justify;
+}
+section.aboutme .aboutContainer .flexOne .social{
+  display: flex;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+section.aboutme .aboutContainer .flexOne .social h3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-radius: 3rem;
+  margin-right: 1rem;
+  color: #ffffff;
+  font-weight: 400;
+  cursor: pointer;
+  height: 4rem;
+margin-top: 1rem;
 }

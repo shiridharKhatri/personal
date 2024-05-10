@@ -6,6 +6,7 @@ import AOS from "aos";
 import { useEffect } from "react";
 import Blogs from "./routes/Blogs";
 import SearchBlogs from "./routes/SearchBlogs";
+import About from "./routes/About";
 function App() {
   const router = createBrowserRouter([
     {
@@ -19,6 +20,10 @@ function App() {
     {
       path: "blog/:title",
       element: <SearchBlogs/>,
+    },
+    {
+      path: "about",
+      element: <About/>,
     },
   ]);
   useEffect(() => {

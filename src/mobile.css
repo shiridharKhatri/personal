@@ -662,6 +662,18 @@
     align-items: center;
     margin: 1rem 0;
   }
+  section.aboutme .aboutContainer{
+    flex-direction: column;
+    width: 95%;
+    margin: 6rem 0 20rem 0;
+  }
+  section.aboutme .aboutContainer .image {
+    margin: 9rem 0 0 0;
+  }
+  section.aboutme .aboutContainer .image::before{
+    right: 0;
+  }
+  
 }
 @media (max-width: 580px) {
   .mailContent form,

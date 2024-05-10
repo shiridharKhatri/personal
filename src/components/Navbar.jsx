@@ -84,6 +84,9 @@ export default function Navbar(props) {
     console.log(inpVal);
     navigate(`/blog/${inpVal}`);
   };
+  const routeTo = (route) => {
+    navigate(route);
+  };
   return (
     <nav
       style={{ position: props.position, background: props.background }}
@@ -150,11 +153,26 @@ export default function Navbar(props) {
                   Menu
                 </h3>
               </div>
-              <li>
+              <li
+                onClick={() => {
+                  routeTo("/");
+                }}
+              >
                 <span className="hidden">
                   <BiIcons.BiHomeAlt />
                 </span>
                 Home
+              </li>
+
+              <li
+                onClick={() => {
+                  routeTo("/about");
+                }}
+              >
+                <span className="hidden">
+                  <BsIcons.BsInfoLg />
+                </span>
+                About
               </li>
               <li onClick={props.tour}>
                 <span className="hidden">
@@ -162,13 +180,6 @@ export default function Navbar(props) {
                 </span>
                 Tour
               </li>
-              <li>
-                <span className="hidden">
-                  <BsIcons.BsInfoLg />
-                </span>
-                About
-              </li>
-
               <li id="moreItem" onClick={showMenuOnClick}>
                 More <BiIcons.BiChevronDown />
               </li>
@@ -228,7 +239,7 @@ export default function Navbar(props) {
                 <span>
                   <GoIcons.GoFileCode />
                 </span>
-                Free code 
+                Free code
               </li>
               <li>
                 <span>
