@@ -4,8 +4,10 @@ import moment from "moment";
 export default function Header() {
   const scaleOne = useRef(null);
   const scaleTwo = useRef(null);
+  const fixedLoaderImage = useRef(null);
   const scaleThree = useRef(null);
   const [greeting, setGreeting] = useState("");
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 95) {
@@ -30,10 +32,10 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     setTimeout(() => {
       scaleTwo.current.style.transform = "scale(1)";
-    }, 500);
+    }, 2400);
     setTimeout(() => {
       scaleThree.current.style.transform = "scale(1)";
-    }, 800);
+    }, 2600);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -56,8 +58,16 @@ export default function Header() {
     greetingText();
   }, []);
 
+  useEffect(() => {
+    setTimeout(() => {
+      fixedLoaderImage.current.style.display = "none";
+    }, 2300);
+  }, []);
   return (
     <header id="headerId">
+      <div className="loadImage" ref={fixedLoaderImage}>
+        <img src="/loader.gif" alt="loading" />
+      </div>
       <div className="headContainer">
         <div className="text">
           <h1>Hi, Good{greeting}!</h1>
