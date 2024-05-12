@@ -1979,3 +1979,24 @@ section.aboutme .aboutContainer .flexOne .social h3 {
   height: 4rem;
   margin-top: 1rem;
 }
+section.responsiveness {
+  width: 90%;
+  margin: 10rem auto 0rem auto;
+}
+section.responsiveness .description{
+  width: 50%;
+}
+section.responsiveness .images{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 50rem;
+}
+
+section.responsiveness .images img{
+  width:auto;
+  height: 35rem;
+  position: absolute;
+}

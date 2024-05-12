@@ -64,72 +64,96 @@ export default function Header() {
     }, 2300);
   }, []);
   return (
-    <header id="headerId">
-      <div className="loadImage" ref={fixedLoaderImage}>
-        <img src="/loader.gif" alt="loading" />
-      </div>
-      <div className="headContainer">
-        <div className="text">
-          <h1>Hi, Good{greeting}!</h1>
-          <h1 style={{ fontSize: "2rem", width: "40rem" }}>
-            <span>Shiridhar Khatri</span>
-          </h1>
-          <h1>Web Developer/Designer</h1>
-          <p>
-            Full-stack developer with expertise in HTML, CSS, JavaScript,
-            ReactJS, NodeJS, MongoDB, AWS, Wordpress, and GoDaddy. I specialize
-            in crafting engaging user interfaces and solid backend solutions for
-            web apps.
-          </p>
-          <div className="buttons">
-            <a
-              href="https://www.upwork.com/freelancers/shiridhark"
-              target="_blank"
-            >
-              <button style={{ color: "var(--black-white)" }}>Hire me</button>
-            </a>
-            <a href="/resume.pdf" target="_blank" title="Shiridhar-Resume">
-              <button
-                style={{
-                  background: "transparent",
-                  color: "var(--btn-text-color)",
-                  border: ".1rem dashed var(--btn-text-color)",
-                  position: "relative",
-                  overflow: "hidden",
-                }}
+    <>
+      <header id="headerId">
+        <div className="loadImage" ref={fixedLoaderImage}>
+          <img src="/loader.gif" alt="loading" />
+        </div>
+        <div className="headContainer">
+          <div className="text">
+            <h1>Hi, Good{greeting}!</h1>
+            <h1 style={{ fontSize: "2rem", width: "40rem" }}>
+              <span>Shiridhar Khatri</span>
+            </h1>
+            <h1>Web Developer/Designer</h1>
+            <p>
+              Full-stack developer with expertise in HTML, CSS, JavaScript,
+              ReactJS, NodeJS, MongoDB, AWS, Wordpress, and GoDaddy. I
+              specialize in crafting engaging user interfaces and solid backend
+              solutions for web apps.
+            </p>
+            <div className="buttons">
+              <a
+                href="https://www.upwork.com/freelancers/shiridhark"
+                target="_blank"
               >
-                Resume
-              </button>
-            </a>
-          </div>
-        </div>
-        <div className="image">
-          <h1 className="shadow"></h1>
-          <img src="/headImg.png" alt="image" />
-          <div className="clients" ref={scaleOne}>
-            <div className="imgs">
-              <img src="/review/ally.webp" alt="ally" />
-              <img src="/review/neo.webp" alt="neo" />
-              <img src="/review/vis.webp" alt="vis" />
-              <img src="/review/aaisha.webp" alt="aaisha" />
-              <h2>+2</h2>
+                <button style={{ color: "var(--black-white)" }}>Hire me</button>
+              </a>
+              <a href="/resume.pdf" target="_blank" title="Shiridhar-Resume">
+                <button
+                  style={{
+                    background: "transparent",
+                    color: "var(--btn-text-color)",
+                    border: ".1rem dashed var(--btn-text-color)",
+                    position: "relative",
+                    overflow: "hidden",
+                  }}
+                >
+                  Resume
+                </button>
+              </a>
             </div>
-            <p>Happy Clients</p>
           </div>
-          <div className="projectss" ref={scaleTwo}>
-            <h2>
-              <CgIcons.CgWebsite />
-            </h2>{" "}
-            100+ Projects
-          </div>
-          <div className="starss" ref={scaleThree}>
-            <h2>
-              <MdIcons.MdStars />
-            </h2>
-            <p>4.9</p>
+          <div className="image">
+            <h1 className="shadow"></h1>
+            <img src="/headImg.png" alt="image" />
+            <div className="clients" ref={scaleOne}>
+              <div className="imgs">
+                <img src="/review/ally.webp" alt="ally" />
+                <img src="/review/neo.webp" alt="neo" />
+                <img src="/review/vis.webp" alt="vis" />
+                <img src="/review/aaisha.webp" alt="aaisha" />
+                <h2>+2</h2>
+              </div>
+              <p>Happy Clients</p>
+            </div>
+            <div className="projectss" ref={scaleTwo}>
+              <h2>
+                <CgIcons.CgWebsite />
+              </h2>{" "}
+              100+ Projects
+            </div>
+            <div className="starss" ref={scaleThree}>
+              <h2>
+                <MdIcons.MdStars />
+              </h2>
+              <p>4.9</p>
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
+      <section className="responsiveness" style={{display:"flex"}}>
+        <div className="description">
+          <h1>Responsive design</h1>
+          <p>
+            Responsive web design means making websites that look good on any
+            device. We can achieve this using media queries, which adjust the
+            layout based on screen size. Alternatively, we can use frameworks
+            like Bootstrap or Tailwind CSS, which provide ready-made tools for
+            creating responsive designs. In short, responsiveness ensures that a
+            website works well whether it's viewed on a big computer screen or a
+            small smartphone. I am proficient in making responsive designs as
+            well.
+          </p>
+        </div>
+        <div className="images">
+          <img src="/responsiveness/forth.png" alt="forth" />
+          <img src="/responsiveness/second.png" alt="second" />
+          <img src="/responsiveness/top.png" alt="top" />
+          <img src="/responsiveness/third.png" alt="third" />
+          <img src="/responsiveness/fifth.png" alt="fifth" />
+        </div>
+      </section>
+    </>
   );
 }
