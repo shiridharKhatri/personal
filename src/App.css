@@ -2014,6 +2014,8 @@ section.responsiveness .images img {
   height: 30rem;
   position: absolute;
   transition: 0.3s ease all;
+  box-shadow: 0px 77px 67px -54px rgba(0,0,0,0.81);
+  border-radius: 2rem;
 }
 section.responsiveness .images img.top {
   z-index: 5;

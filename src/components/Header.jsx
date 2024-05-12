@@ -7,6 +7,7 @@ export default function Header() {
   const fixedLoaderImage = useRef(null);
   const scaleThree = useRef(null);
   const [greeting, setGreeting] = useState("");
+  const videoRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,7 +61,9 @@ export default function Header() {
 
   useEffect(() => {
     setTimeout(() => {
-      fixedLoaderImage.current.style.display = "none";
+      if (fixedLoaderImage.current) {
+        fixedLoaderImage.current.style.display = "none";
+      }
     }, 2300);
   }, []);
 
@@ -72,17 +75,17 @@ export default function Header() {
     let fifth = document.querySelector(".images img.fifth");
     const handleScroll = () => {
       if (window.scrollY >= 400 && window.scrollY <= 900) {
-        top.style.height = "30rem"
-        second.style.left = "13rem"
-        third.style.right = "13rem"
-        forth.style.left = "6rem"
-        fifth.style.right = "6rem"
+        top.style.height = "30rem";
+        second.style.left = "12rem";
+        third.style.right = "12rem";
+        forth.style.left = "6rem";
+        fifth.style.right = "6rem";
       } else {
-        top.style.height = "35rem"
-        second.style.left = "23rem"
-        third.style.right = "23rem"
-        forth.style.left = "23rem"
-        fifth.style.right = "23rem"
+        top.style.height = "35rem";
+        second.style.left = "23rem";
+        third.style.right = "23rem";
+        forth.style.left = "23rem";
+        fifth.style.right = "23rem";
       }
     };
 
@@ -96,7 +99,7 @@ export default function Header() {
     <>
       <header id="headerId">
         <div className="loadImage" ref={fixedLoaderImage}>
-          <img src="/loader.gif" alt="loading" />
+        <img src="/loader.gif" alt="loader" />
         </div>
         <div className="headContainer">
           <div className="text">
