@@ -430,6 +430,20 @@
   section.indBlog .blogContainer h2 {
     font-size: 2rem;
   }
+  section.responsiveness{
+    flex-direction: column;
+  }
+  section.responsiveness .description {
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  section.responsiveness .images{
+    margin: auto;
+  }
+  section.responsiveness .description p{
+    width: 100%;
+  }
 }
 @media (max-width: 460px) {
   #headerId .headContainer img {
@@ -676,6 +690,9 @@
   
 }
 @media (max-width: 580px) {
+  section.responsiveness .images{
+    width: 100%;
+  }
   .mailContent form,
   .mailSection .cardMail {
     background: transparent;

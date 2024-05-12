@@ -1982,12 +1982,26 @@ section.aboutme .aboutContainer .flexOne .social h3 {
 section.responsiveness {
   width: 90%;
   margin: 10rem auto 0rem auto;
+  background: var(--secondary-background-color);
 }
-section.responsiveness .description{
+section.responsiveness .description {
   width: 50%;
+  padding: 10rem 0;
+  color: var(--color);
 }
-section.responsiveness .images{
-  width: 50%;
+section.responsiveness .description h1 {
+  font-size: 3rem;
+  margin: 2rem 0;
+  font-family: "rosiana-font";
+  color: var(--color);
+}
+section.responsiveness .description p {
+  font-size: 1.5rem;
+  width: 90%;
+  text-align: justify;
+}
+section.responsiveness .images {
+  width: 60rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1995,8 +2009,34 @@ section.responsiveness .images{
   height: 50rem;
 }
 
-section.responsiveness .images img{
-  width:auto;
-  height: 35rem;
+section.responsiveness .images img {
+  width: auto;
+  height: 30rem;
   position: absolute;
+  transition: 0.3s ease all;
+}
+section.responsiveness .images img.top {
+  z-index: 5;
+  transition: 0.3s ease all;
+  height: 35rem;
+}
+section.responsiveness .images img.second {
+  transition: 0.3s ease all;
+  height: 27rem;
+  z-index: 4;
+}
+section.responsiveness .images img.third {
+  transition: 0.3s ease all;
+  height: 27rem;
+  z-index: 4;
+}
+section.responsiveness .images img.forth {
+  z-index: 3;
+  transition: 0.3s ease all;
+  height: 24rem;
+}
+section.responsiveness .images img.fifth {
+  z-index: 3;
+  transition: 0.3s ease all;
+  height: 24rem;
 }

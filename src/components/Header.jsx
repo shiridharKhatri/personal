@@ -63,6 +63,35 @@ export default function Header() {
       fixedLoaderImage.current.style.display = "none";
     }, 2300);
   }, []);
+
+  useEffect(() => {
+    let top = document.querySelector(".images img.top");
+    let second = document.querySelector(".images img.second");
+    let third = document.querySelector(".images img.third");
+    let forth = document.querySelector(".images img.forth");
+    let fifth = document.querySelector(".images img.fifth");
+    const handleScroll = () => {
+      if (window.scrollY >= 400 && window.scrollY <= 900) {
+        top.style.height = "30rem"
+        second.style.left = "13rem"
+        third.style.right = "13rem"
+        forth.style.left = "6rem"
+        fifth.style.right = "6rem"
+      } else {
+        top.style.height = "35rem"
+        second.style.left = "23rem"
+        third.style.right = "23rem"
+        forth.style.left = "23rem"
+        fifth.style.right = "23rem"
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <>
       <header id="headerId">
@@ -132,7 +161,7 @@ export default function Header() {
           </div>
         </div>
       </header>
-      <section className="responsiveness" style={{display:"flex"}}>
+      <section className="responsiveness" style={{ display: "flex" }}>
         <div className="description">
           <h1>Responsive design</h1>
           <p>
@@ -147,11 +176,36 @@ export default function Header() {
           </p>
         </div>
         <div className="images">
-          <img src="/responsiveness/forth.png" alt="forth" />
-          <img src="/responsiveness/second.png" alt="second" />
-          <img src="/responsiveness/top.png" alt="top" />
-          <img src="/responsiveness/third.png" alt="third" />
-          <img src="/responsiveness/fifth.png" alt="fifth" />
+          <img
+            id="forth"
+            className="forth"
+            src="/responsiveness/forth.png"
+            alt="forth"
+          />
+          <img
+            id="second"
+            className="second"
+            src="/responsiveness/second.png"
+            alt="second"
+          />
+          <img
+            id="top"
+            className="top"
+            src="/responsiveness/top.png"
+            alt="top"
+          />
+          <img
+            id="third"
+            className="third"
+            src="/responsiveness/third.png"
+            alt="third"
+          />
+          <img
+            id="fifth"
+            className="fifth"
+            src="/responsiveness/fifth.png"
+            alt="fifth"
+          />
         </div>
       </section>
     </>
