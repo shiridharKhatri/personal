@@ -433,12 +433,13 @@
   section.responsiveness{
     flex-direction: column;
     width: 100%;
+    margin-top: 5rem;
   }
   section.responsiveness .description {
-    width: 100%;
+    width: 95%;
     padding-top: 0;
     padding-bottom: 0;
-    margin: 0 2rem;
+    margin:auto;
   }
   section.responsiveness .images{
     margin: auto;
