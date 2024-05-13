@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function Blogs() {
   const [blogs, setBlogs] = useState([]);
   const [success, setSuccess] = useState(false);
-  const host = "https://peach-dugong-hem.cyclic.app";
+  const host = "https://personalbackend.onrender.com";
   useEffect(() => {
     async function fetchItems() {
       try {

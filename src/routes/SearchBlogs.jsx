@@ -9,7 +9,7 @@ export default function Blogs() {
   const [loader, setLoader] = useState(true);
   const params = useParams();
   const containerRef = useRef(null);
-  const host = "https://peach-dugong-hem.cyclic.app";
+  const host = "https://personalbackend.onrender.com";
   useEffect(() => {
     async function fetchItems() {
       try {
