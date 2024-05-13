@@ -10,6 +10,11 @@
   src: url(./rosiana-font/RosianaRegular-JRxEB.ttf);
   font-weight: normal;
 }
+@font-face {
+  font-family: Argent-CF;
+  src: url(./Argent-CF/Fontspring-DEMO-argentcf-extrabold.otf);
+  font-weight: normal;
+}
 * {
   margin: 0;
   padding: 0;

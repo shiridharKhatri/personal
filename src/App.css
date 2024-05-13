@@ -493,7 +493,7 @@ section.container h1.headText {
   align-items: center;
   position: relative;
   color: var(--color);
-  font-family: "rosiana-font";
+  font-family: "Argent-CF";
   letter-spacing: 0.3rem;
 }
 section.protfolio h1.headText {
@@ -1981,7 +1981,7 @@ section.aboutme .aboutContainer .flexOne .social h3 {
 }
 section.responsiveness {
   width: 90%;
-  margin: 10rem auto 0rem auto;
+  margin: 2rem auto 0rem auto;
   background: var(--secondary-background-color);
 }
 section.responsiveness .description {
@@ -1992,7 +1992,7 @@ section.responsiveness .description {
 section.responsiveness .description h1 {
   font-size: 3rem;
   margin: 2rem 0;
-  font-family: "rosiana-font";
+  font-family: "Argent-CF";
   color: var(--color);
 }
 section.responsiveness .description p {
