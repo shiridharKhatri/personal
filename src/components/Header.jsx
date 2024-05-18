@@ -4,10 +4,8 @@ import moment from "moment";
 export default function Header() {
   const scaleOne = useRef(null);
   const scaleTwo = useRef(null);
-  const fixedLoaderImage = useRef(null);
   const scaleThree = useRef(null);
   const [greeting, setGreeting] = useState("");
-  const videoRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,13 +57,6 @@ export default function Header() {
     greetingText();
   }, []);
 
-  useEffect(() => {
-    setTimeout(() => {
-      if (fixedLoaderImage.current) {
-        fixedLoaderImage.current.style.display = "none";
-      }
-    }, 2300);
-  }, []);
 
   useEffect(() => {
     let top = document.querySelector(".images img.top");
@@ -98,9 +89,6 @@ export default function Header() {
   return (
     <>
       <header id="headerId">
-        <div className="loadImage" ref={fixedLoaderImage}>
-        <img src="/loader.gif" alt="loader" />
-        </div>
         <div className="headContainer">
           <div className="text">
             <h1>Hi, Good{greeting}!</h1>
