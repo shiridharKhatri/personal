@@ -31,10 +31,10 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     setTimeout(() => {
       scaleTwo.current.style.transform = "scale(1)";
-    }, 2400);
+    }, 500);
     setTimeout(() => {
       scaleThree.current.style.transform = "scale(1)";
-    }, 2600);
+    }, 800);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
