@@ -1,8 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Bangers&family=Bungee+Spice&family=Caveat&family=Combo&family=Concert+One&family=Dancing+Script&family=DynaPuff:wght@400;500&family=Lexend:wght@500&family=Lobster&family=Pacifico&family=Permanent+Marker&family=Poppins:wght@100&family=Qwitcher+Grypen&family=Roboto:ital,wght@1,100&family=Rubik:wght@300&family=Silkscreen&family=Varela+Round&display=swap");
+
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cookie&family=Indie+Flower&family=Kolker+Brush&family=Paytone+One&family=Roboto:wght@100&family=Shalimar&family=Titan+One&family=Varela+Round&family=Zen+Antique&display=swap");
+
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cookie&family=Indie+Flower&family=Kdam+Thmor+Pro&family=Kolker+Brush&family=Montserrat:ital@1&family=Paytone+One&family=Poppins&family=Roboto:wght@100&family=Shalimar&family=Titan+One&family=Varela+Round&family=Zen+Antique&display=swap");
+
 @import url("https://fonts.googleapis.com/css2?family=Belanosima:wght@600&display=swap");
+
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap");
+
 @import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@900&display=swap");
 
 @font-face {
@@ -10,11 +15,13 @@
   src: url(./rosiana-font/RosianaRegular-JRxEB.ttf);
   font-weight: normal;
 }
+
 @font-face {
   font-family: Argent-CF;
   src: url(./Argent-CF/Fontspring-DEMO-argentcf-extrabold.otf);
   font-weight: normal;
 }
+
 * {
   margin: 0;
   padding: 0;

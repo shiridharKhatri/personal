@@ -497,7 +497,7 @@ section.container h1.headText {
   letter-spacing: 0.3rem;
 }
 section.protfolio h1.headText {
-  margin: 8rem 0 4rem 0;
+  margin: 4rem 0 4rem 0;
 }
 section.container h1.headText::before {
   content: "";
@@ -1694,7 +1694,7 @@ section.protfolio .star {
   color: var(--color);
 }
 section.blogs {
-  margin: 5rem 0;
+  margin: 0;
   width: 100%;
 }
 section.blogs .blogContainer {
@@ -1926,29 +1926,84 @@ section.loading .loader > div:nth-child(5) {
 section.aboutme .aboutContainer {
   display: flex;
   width: 90%;
-  margin: 10rem 0 20rem 0;
+  margin: 5rem 0 20rem 0;
 }
 section.aboutme .aboutContainer .image {
-  margin: 0 5rem 0 10rem;
+  margin: 0 3rem 0 15rem;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   height: 35rem;
 }
-section.aboutme .aboutContainer .image::before {
-  content: "";
+section.aboutme .aboutContainer .image span.react{
   position: absolute;
-  background: var(--btn-text-color);
-  height: 100%;
-  width: 100%;
-  right: -2.5rem;
-  bottom: -2.5rem;
-  z-index: -1;
+  left: 6rem;
+  font-size: 3rem;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(.7rem);
+  border-radius: 1rem;
+  color: #61DBFB;
+  top: 12rem;
+}
+section.aboutme .aboutContainer .image span.html{
+  position: absolute;
+  right: 5rem;
+  font-size: 3rem;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(.7rem);
+  border-radius: 1rem;
+  color: #ea4335;
+  top: 15rem;
+}
+section.aboutme .aboutContainer .image span.javascript{
+  position: absolute;
+left: 5rem;
+  font-size: 3rem;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(.7rem);
+  border-radius: 1rem;
+  color: #F0DB4F;
+  bottom: 1rem;
+}
+section.aboutme .aboutContainer .image span.nextjs{
+  position: absolute;
+right: 5rem;
+  font-size: 3rem;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(.7rem);
+  border-radius: 1rem;
+  color: #000000;
+  bottom: 1rem;
 }
 section.aboutme .aboutContainer .image img {
   height: 100%;
-  border: 0.3rem solid var(--btn-text-color);
+}
+section.aboutme .aboutContainer .image  h1{
+  box-shadow: 0px 0px 144px 63px var(--btn-text-color);
+  position: absolute;
+  height: 5rem;
+  width: 5rem;
+  top: 20rem;
+  right: 14rem;
+  z-index: -1;
+  background: var(--btn-text-color);
 }
 section.aboutme .aboutContainer .flexOne h2 {
   font-size: 3rem;
@@ -1971,13 +2026,19 @@ section.aboutme .aboutContainer .flexOne .social h3 {
   justify-content: center;
   align-items: center;
   padding: 1rem 1.5rem;
-  border-radius: 3rem;
-  margin-right: 1rem;
+  border-radius: 1rem;
+  margin-right: 3rem;
   color: #ffffff;
   font-weight: 400;
   cursor: pointer;
-  height: 4rem;
+  height: 8rem;
   margin-top: 1rem;
+  flex-direction: column;
+  width: 10rem;
+}
+section.aboutme .aboutContainer .flexOne .social h3  span{
+  font-size: 2rem;
+  margin-bottom: .4rem;
 }
 section.responsiveness {
   width: 90%;
@@ -1986,14 +2047,15 @@ section.responsiveness {
 }
 section.responsiveness .description {
   width: 50%;
-  padding: 10rem 0;
+  padding: 7rem 0;
   color: var(--color);
 }
 section.responsiveness .description h1 {
   font-size: 3rem;
   margin: 2rem 0;
-  font-family: "Argent-CF";
-  color: var(--color);
+  font-family:"Lexend", sans-serif;
+  color: var(--btn-text-color);
+  font-weight: bold;
 }
 section.responsiveness .description p {
   font-size: 1.5rem;

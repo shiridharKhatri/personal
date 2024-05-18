@@ -11,19 +11,19 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Root/>,
+      element: <Root />,
     },
     {
       path: "blogs/:blogId/:title",
-      element: <Blogs/>,
+      element: <Blogs />,
     },
     {
       path: "blog/:title",
-      element: <SearchBlogs/>,
+      element: <SearchBlogs />,
     },
     {
       path: "about",
-      element: <About/>,
+      element: <About />,
     },
   ]);
   useEffect(() => {
@@ -32,7 +32,7 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
-      <Footer/>
+      <Footer />
     </>
   );
 }

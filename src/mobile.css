@@ -318,7 +318,7 @@
   }
 
   section.expertise {
-    margin: 10rem 0 0 0;
+    margin: 0;
   }
   section.BelowButton li span {
     display: none;
@@ -612,7 +612,9 @@
     font-size: 2.8rem;
     color: var(--btn-text-color);
   }
-
+  section.aboutme .aboutContainer .flexOne .social{
+    flex-wrap: nowrap;
+  }
   .mailContent h2 {
     color: var(--color);
   }
@@ -690,7 +692,31 @@
   section.aboutme .aboutContainer .image::before{
     right: 0;
   }
-  
+  section.aboutme .aboutContainer .image h1{
+    top: 20rem;
+    right: 35rem;
+
+  }
+  section.aboutme .aboutContainer .flexOne .social h3
+  {
+    font-size: 1.5rem;
+    width: 12rem;
+    height: 7rem;
+    margin-right: 3rem;
+  }
+  section.aboutme .aboutContainer .image span.react{
+    font-size: 5rem;
+  }
+  section.aboutme .aboutContainer .image span.html{
+    font-size: 5rem;
+    top: 10rem;
+  }
+  section.aboutme .aboutContainer .image span.javascript{
+    font-size: 5rem;
+  }
+  section.aboutme .aboutContainer .image span.nextjs{
+    font-size: 5rem;
+  }
 }
 @media (max-width: 580px) {
   section.responsiveness .images{
@@ -703,6 +729,9 @@
   nav ul {
     height: 100vh;
     border-radius: 0;
+  }
+  section.aboutme .aboutContainer .image h1{
+    right: 20rem;
   }
   nav.navbar,
   nav.navbar-scrolled {
@@ -742,6 +771,16 @@
     padding: 0;
     height: auto;
   }
+  section.aboutme .aboutContainer .flexOne .social{
+    flex-direction: column;
+  }
+  section.aboutme .aboutContainer .flexOne .social h3{
+    width: 100%;
+    height: 8rem;
+  }
+  section.aboutme .aboutContainer .flexOne .social h3 span {
+    font-size: 2rem;
+}
   section.protfolio button.viewAllBtn {
     margin: 5rem 0 0rem 0;
   }
