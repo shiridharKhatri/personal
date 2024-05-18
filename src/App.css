@@ -1147,18 +1147,9 @@ section.mainMailSection .success__close path {
 }
 
 .mailContent form textarea:focus {
-  border: 2px solid #2d79f3;
+  border: 2px solid var(--btn-text-color);
 }
-/* .mailContent form input {
-  padding: 1rem;
-  border-radius: 0.5rem;
-  border: 0.1rem solid #000;
-  width: 100%;
-  outline: none;
-}
-.mailContent form input:focus {
-  border: 0.2rem solid #2d79f3;
-} */
+
 
 .mailContent form input {
   width: 100%;
@@ -1183,7 +1174,7 @@ section.mainMailSection .success__close path {
 }
 
 .mailContent form input:focus {
-  border: 2px solid #2d79f3;
+  border: 2px solid var(--btn-text-color);
 }
 
 .mailContent h2 {
