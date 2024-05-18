@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import Blogs from "./routes/Blogs";
 import SearchBlogs from "./routes/SearchBlogs";
 import About from "./routes/About";
+import Notfound from "./routes/Notfound";
 function App() {
   const router = createBrowserRouter([
     {
@@ -24,6 +25,10 @@ function App() {
     {
       path: "about",
       element: <About />,
+    },
+    {
+      path: "*",
+      element: <Notfound/>,
     },
   ]);
   useEffect(() => {
