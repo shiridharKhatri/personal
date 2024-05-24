@@ -33,7 +33,7 @@ html {
   font-size: 62.5%;
 }
 :root {
-  --primary-background-color: #f5f5f5;
+  --primary-background-color: #ffffff;
   --secondary-background-color: radial-gradient(
     50% 50% at 50% 50%,
     rgba(82, 57, 233, 0.1) 0,
