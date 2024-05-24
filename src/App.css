@@ -2032,9 +2032,10 @@ section.aboutme .aboutContainer .flexOne .social h3  span{
   margin-bottom: .4rem;
 }
 section.responsiveness {
-  width: 90%;
-  margin: 2rem auto 0rem auto;
-  background: var(--secondary-background-color);
+  width: 100%;
+  margin: 0rem auto 0rem auto;
+  background-image: var(--responsive-sec-bg);
+  padding: 0 7rem;
 }
 section.responsiveness .description {
   width: 50%;

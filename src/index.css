@@ -27,6 +27,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Lexend", sans-serif;
+  scroll-behavior: smooth;
 }
 html {
   font-size: 62.5%;
@@ -45,6 +46,7 @@ html {
   --btn-text-color: #00abe1;
   --btn-bg-color: #00ace13a;
   --black-white: #ffffff;
+  --responsive-sec-bg: linear-gradient(315deg, #d5fefd 0%, #fffcff 74%);
 }
 .darkMode {
   --primary-background-color: #0d0a1a;
@@ -70,4 +72,9 @@ html {
   --btn-text-color: #facd3d;
   --btn-bg-color: #facd3d2e;
   --black-white: #101010;
+  --responsive-sec-bg: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(82, 57, 233, 0.1) 0,
+    rgba(147, 115, 238, 0) 100%
+  );;
 }

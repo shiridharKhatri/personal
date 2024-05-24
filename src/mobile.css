@@ -121,7 +121,7 @@
     left: 9rem;
   }
   nav .otherSec form {
-    justify-content: center;
+    justify-content: space-between;
     position: relative;
     height: 6rem;
     width: 31rem;
@@ -433,7 +433,7 @@
   section.responsiveness{
     flex-direction: column;
     width: 100%;
-    margin-top: 5rem;
+    padding: 5rem 2rem;
   }
   section.responsiveness .description {
     width: 95%;
@@ -936,9 +936,7 @@
   nav .otherSec form {
     margin-right: 1rem;
   }
-  nav .otherSec form #voice {
-    display: none;
-  }
+
   nav .otherSec form button {
     border-radius: 0rem 3rem 3rem 0rem;
     /* width: 15%; */

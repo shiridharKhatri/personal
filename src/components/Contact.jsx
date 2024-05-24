@@ -1,5 +1,6 @@
-import React, { useRef, useState } from "react";
-
+import React, { useEffect, useRef, useState } from "react";
+import { driver } from "driver.js";
+import "driver.js/dist/driver.css";
 export default function Contact() {
   const [input, setInput] = useState({ email: "", message: "" });
   const successRef = useRef(null);
@@ -12,6 +13,39 @@ export default function Contact() {
     setInput({ ...input, [name]: value });
   };
 
+  useEffect(() => {
+    const driverObj = driver(
+      {
+      popoverClass: "driverjs-theme",
+      stagePadding: 0,
+      onDestroyed: () => {
+        document?.activeElement?.blur();
+      },
+    }
+  );
+    emailRef.current.addEventListener("focus", () => {
+      driverObj.highlight({
+        element: emailRef.current.id,
+        popover: {
+          title: "Name",
+          description: "Enter your name here",
+        },
+      });
+    });
+
+    messageRef.current.addEventListener("focus", () => {
+      driverObj.highlight({
+        element: messageRef.current.id,
+        popover: {
+          title: "Education",
+          description: "Enter your education here",
+        },
+      });
+    });
+    document.getElementById("form").addEventListener("blur", () => {
+      driverObj.destroy();
+    });
+  }, []);
   const sendMessage = async (e) => {
     e.preventDefault();
     let validate;
@@ -146,7 +180,7 @@ export default function Contact() {
     }
   };
   return (
-    <section className="mainMailSection">
+    <section className="mainMailSection" id="contactsec">
       <div className="successMessage" ref={successRef}></div>
       <div className="mailSection" id="mailId">
         <div className="cardMail">
@@ -163,7 +197,7 @@ export default function Contact() {
               Send me your message by entering your valid email address. Thank
               you for visiting this website.
             </h4>
-            <form action="">
+            <form action="" id="form">
               <input
                 ref={emailRef}
                 onChange={inpValOnChange}

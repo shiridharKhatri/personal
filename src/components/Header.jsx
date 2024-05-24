@@ -57,7 +57,6 @@ export default function Header() {
     greetingText();
   }, []);
 
-
   useEffect(() => {
     let top = document.querySelector(".images img.top");
     let second = document.querySelector(".images img.second");
@@ -107,10 +106,11 @@ export default function Header() {
                 href="https://www.upwork.com/freelancers/shiridhark"
                 target="_blank"
               >
-                <button style={{ color: "var(--black-white)" }}>Hire me</button>
+                <button id="hireMe" style={{ color: "var(--black-white)" }}>Hire me</button>
               </a>
               <a href="/resume.pdf" target="_blank" title="Shiridhar-Resume">
                 <button
+                id="resume"
                   style={{
                     background: "transparent",
                     color: "var(--btn-text-color)",

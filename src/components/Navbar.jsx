@@ -175,10 +175,23 @@ export default function Navbar(props) {
                 About
               </li>
               <li onClick={props.tour}>
-                <span className="hidden">
-                  <SiIcons.SiYourtraveldottv />
-                </span>
-                Tour
+                <a
+                  style={{
+                    textDecoration: "none",
+                    display: "flex",
+                    fontSize: "1.7rem",
+                    color: "var(--color)",
+                    fontWeight: "500",
+                    justifyContent:"center",
+                    alignItems:"center"
+                  }}
+                  href="#testimonialId"
+                >
+                  <span className="hidden">
+                    <SiIcons.SiYourtraveldottv />
+                  </span>
+                  Feedback
+                </a>
               </li>
               <li id="moreItem" onClick={showMenuOnClick}>
                 More <BiIcons.BiChevronDown />
@@ -202,18 +215,20 @@ export default function Navbar(props) {
                   </>
                 )}
               </li>
-              <li
-                style={{
-                  backgroundColor: " var(--btn-text-color)",
-                  width: "13rem",
-                  color: "var(--black-white)",
-                }}
-                id="contact"
-                className="mobile-hidden"
-              >
-                <IoIcons.IoCall />
-                &nbsp;Contact
-              </li>
+              <a style={{ textDecoration: "none" }} href="#contactsec">
+                <li
+                  style={{
+                    backgroundColor: " var(--btn-text-color)",
+                    width: "13rem",
+                    color: "var(--black-white)",
+                  }}
+                  id="contact"
+                  className="mobile-hidden"
+                >
+                  <IoIcons.IoCall />
+                  &nbsp;Contact
+                </li>
+              </a>
             </div>
 
             <ul id="DropDown">
