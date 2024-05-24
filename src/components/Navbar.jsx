@@ -179,7 +179,6 @@ export default function Navbar(props) {
                   style={{
                     textDecoration: "none",
                     display: "flex",
-                    fontSize: "1.7rem",
                     color: "var(--color)",
                     fontWeight: "500",
                     justifyContent:"center",

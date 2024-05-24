@@ -79,6 +79,11 @@ export default function Footer(props) {
       <div className="topSection">
         <div className="topLogo">
           <img src="/logo.png" alt="logo" />
+          <p id="footerP">
+            Shiridhar Portfolio is a personal website designed to showcase my
+            work, achievements, and professional details, providing a
+            comprehensive overview of my skills and experiences.
+          </p>
         </div>
         <div className="flex-disp-footer">
           <div className="secondSection item">

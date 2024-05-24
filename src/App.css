@@ -178,7 +178,7 @@ nav .otherSec form button {
 }
 nav ul li {
   /* background-color: red; */
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   font-weight: bold;
   margin: 0 1.5rem;
   display: flex;
@@ -1229,6 +1229,14 @@ section.mainMailSection .success__close path {
   align-items: flex-start;
   flex-direction: column;
 }
+#footerP{
+  color: var(--black-white);
+  width: 26rem;
+  text-align: center;
+  padding: 2rem 3rem 0;
+  line-height: 1.5;
+  opacity: 0.5;
+}
 #footerId {
   background: #000000;
   padding: 1rem;
@@ -1354,10 +1362,14 @@ section.mainMailSection .success__close path {
   color: #ffffff;
 }
 #footerId .topSection .topLogo img {
-  height: 15rem;
-  margin-left: 5rem;
+  height: 12rem;
 }
-
+#footerId .topSection .topLogo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 section.protfolio .gallery {
   display: flex;
 }
