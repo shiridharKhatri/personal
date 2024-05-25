@@ -1415,7 +1415,6 @@ section.protfolio .detailsWrapper {
   margin: auto;
   width: 80%;
 }
-
 section.protfolio .details {
   height: 100vh;
   display: flex;
@@ -1731,7 +1730,7 @@ section.protfolio .star {
   color: var(--color);
 }
 section.blogs {
-  margin: 8rem 0 0 0;
+  margin: 5rem 0 0 0;
   width: 100%;
 }
 section.blogs .blogContainer {

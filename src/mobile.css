@@ -774,7 +774,17 @@
     font-size: 2rem;
     line-height: 1.8;
   }
- 
+  #footerP {
+    color: var(--black-white);
+    width: 90%;
+    text-align: center;
+    padding: 2rem 0;
+    line-height: 1.5;
+    opacity: 0.5;
+  }
+  #headerId .headContainer .text h1 span {
+    font-size: 4rem;
+  }
   section.aboutme .aboutContainer .flexOne .social {
     flex-direction: column;
   }
