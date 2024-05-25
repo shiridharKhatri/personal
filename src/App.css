@@ -505,7 +505,7 @@ section.container .textHead h1{
   color: var(--color);
   text-align: center;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: bold;
 }
 section.container .textHead h1 span{
   background: var(--btn-text-color);
@@ -1515,9 +1515,9 @@ section.protfolio .photo img {
 }
 
 section.protfolio .details h1 {
-  font-size: 3rem;
+  font-size: 2.8rem;
   color: var(--btn-text-color);
-  font-family: "header-font";
+  font-weight: 400;
 }
 section.protfolio .details p {
   font-size: 1.5rem;

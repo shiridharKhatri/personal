@@ -224,7 +224,7 @@ export default function Portfolio() {
                   data-aos-anchor-placement="top-bottom"
                   data-aos-delay="150"
                 >
-                  <h1>{e.name}</h1>
+                  <h1>{index+1}. {e.name}</h1>
                   {!e.star || e.star <= 0 ? (
                     ""
                   ) : (
