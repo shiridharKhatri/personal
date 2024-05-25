@@ -154,7 +154,8 @@ export default function Header() {
       </header>
       <section className="responsiveness" style={{ display: "flex" }}>
         <div className="description">
-          <h1>Responsive design</h1>
+          <h4>Other skill</h4>
+          <h1><span>Responsive design</span> adapts websites to all screen sizes.</h1>
           <p>
             Responsive web design means making websites that look good on any
             device. We can achieve this using media queries, which adjust the

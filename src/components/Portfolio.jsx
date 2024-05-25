@@ -202,7 +202,11 @@ export default function Portfolio() {
   };
   return (
     <section className="container protfolio">
-      <h1 className="headText">Portfolio</h1>
+        <div className="textHead">
+        <h1 style={{margin:"7rem 0 0 0"}}>
+        Some the of highlighted <span>projects</span> I've successfully created.
+        </h1>
+      </div>
       <IframeLinks
         link={livelink}
         isOpen={iframeopen}

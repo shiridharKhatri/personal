@@ -71,7 +71,9 @@ export default function Expertise() {
   }
   return (
     <section className="container expertise ">
-      <h1 className="headText">Expertise</h1>
+      <div className="textHead">
+        <h1><span>My expertise</span> lies in various fields including all listed below</h1>
+      </div>
       <div className="mainContent" id="mainExpContainer">
         {content.map((e, index) => {
           return (

@@ -2,6 +2,9 @@ body {
   background-color: var(--primary-background-color);
   width: 100%;
 }
+p{
+  font-family: "shiridhar-font";
+}
 section,
 #footerId {
   overflow: hidden;
@@ -326,6 +329,7 @@ nav ul li {
 #headerId .headContainer .text h1 span {
   color: var(--btn-text-color);
   font-size: 4.5rem !important;
+  font-family: "header-font";
 }
 #headerId .headContainer .image {
   width: 58rem;
@@ -485,6 +489,31 @@ section.container {
   justify-content: center;
   background: var(--secondary-background-color);
 }
+section.container h1{
+  width: 100%;
+}
+section.container .textHead{
+  width: 93%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.container .textHead h1{
+  width: 50rem;
+  font-size: 2.4rem;
+  margin: 2rem 0 5rem 0;
+  color: var(--color);
+  text-align: center;
+  line-height: 1.5;
+  font-weight: 400;
+}
+section.container .textHead h1 span{
+  background: var(--btn-text-color);
+  color: var(--black-white);
+  padding: .7rem 1.5rem;
+  border-radius: 1rem;
+}
+
 section.container h1.headText {
   margin: 5rem 0 10rem 0;
   font-size: 3rem;
@@ -493,8 +522,9 @@ section.container h1.headText {
   align-items: center;
   position: relative;
   color: var(--color);
-  font-family: "Argent-CF";
+  font-family: "header-font";
   letter-spacing: 0.3rem;
+  width: fit-content;
 }
 section.protfolio h1.headText {
   margin: 4rem 0 4rem 0;
@@ -546,7 +576,7 @@ section.expertise .mainContent {
   height: 30rem;
   display: flex;
   padding: 2rem 0;
-  margin: -4rem 1rem 1rem 1rem;
+  margin: 0rem 1rem 1rem 1rem;
   width: 95%;
   overflow-x: scroll;
 }
@@ -594,7 +624,10 @@ section.expertise .banner h1 {
   font-size: 3rem;
   margin: 0.5rem;
   color: #f7cd46;
+  text-align: center;
+  font-family: "header-font";
 }
+
 section.expertise .banner h3 {
   font-weight: 400;
   color: #ffffff;
@@ -723,7 +756,7 @@ section.service .servicesContainer .cards h3 {
   width: 100%;
   text-align: center;
   font-size: 3rem;
-  font-family: "Belanosima", sans-serif;
+  font-family: "header-font";
   color: #ffffff;
   margin-bottom: 2rem;
 }
@@ -1180,7 +1213,7 @@ section.mainMailSection .success__close path {
 .mailContent h2 {
   font-size: 3rem;
   width: 100%;
-  font-family: "Belanosima", sans-serif;
+  font-family: "header-font";
   color: var(--color);
 }
 .mailContent h4 {
@@ -1272,13 +1305,13 @@ section.mainMailSection .success__close path {
   padding: 1rem;
 }
 #footerId .topSection h1 {
-  font-family: "Belanosima", sans-serif;
-  font-size: 2.5rem;
+  font-family: "header-font";
+  font-size: 2.2rem;
   margin: 1rem 0;
   color: #ffffff;
 }
 #footerId .topSection .item ul li {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin: 0.7rem 0;
   display: flex;
   color: #ffffff;
@@ -1485,6 +1518,7 @@ section.protfolio .photo img {
 section.protfolio .details h1 {
   font-size: 3rem;
   color: var(--btn-text-color);
+  font-family: "header-font";
 }
 section.protfolio .details p {
   font-size: 1.5rem;
@@ -1697,7 +1731,7 @@ section.protfolio .star {
   color: var(--color);
 }
 section.blogs {
-  margin: 0;
+  margin: 8rem 0 0 0;
   width: 100%;
 }
 section.blogs .blogContainer {
@@ -2047,24 +2081,44 @@ section.responsiveness {
   width: 100%;
   margin: 0rem auto 0rem auto;
   background-image: var(--responsive-sec-bg);
-  padding: 0 7rem;
+  padding: 0 3rem 0 7rem;
 }
 section.responsiveness .description {
-  width: 50%;
+  width: 46%;
   padding: 7rem 0;
   color: var(--color);
+  margin-right: 3rem;
+}
+section.responsiveness .description h4{
+  font-family: "shiridhar-font";
+  padding: 1rem 1rem;
+  background: var(--btn-bg-color);
+  color: var(--btn-text-color);
+  border-radius: 3rem;
+  height: 3.3rem;
+  width: 9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+section.responsiveness .description h1 span{
+  color: var(--btn-text-color);
 }
 section.responsiveness .description h1 {
   font-size: 3rem;
-  margin: 2rem 0;
-  font-family:"Lexend", sans-serif;
-  color: var(--btn-text-color);
+  margin: .5rem 0 2rem 0;
+  font-family: "Lexend", sans-serif;
+  color: var(--color);
   font-weight: bold;
 }
 section.responsiveness .description p {
   font-size: 1.5rem;
-  width: 90%;
+  width: 100%;
   text-align: justify;
+  line-height: 1.5;
 }
 section.responsiveness .images {
   width: 60rem;

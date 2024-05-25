@@ -28,7 +28,13 @@ export default function Blogs() {
   }, [host]);
   return (
     <section className="container blogs">
-      <h1 className="headText">Latest Blogs</h1>
+      <div className="textHead">
+
+        <h1>
+          Read our <span>latest blog</span> posts, updated to keep you informed
+          and engaged.
+        </h1>
+      </div>
       <div className="blogContainer">
         {success === true ? (
           <>

@@ -430,7 +430,7 @@
   section.indBlog .blogContainer h2 {
     font-size: 2rem;
   }
-  section.responsiveness{
+  section.responsiveness {
     flex-direction: column;
     width: 100%;
     padding: 5rem 2rem;
@@ -439,12 +439,12 @@
     width: 95%;
     padding-top: 0;
     padding-bottom: 0;
-    margin:auto;
-  }
-  section.responsiveness .images{
     margin: auto;
   }
-  section.responsiveness .description p{
+  section.responsiveness .images {
+    margin: auto;
+  }
+  section.responsiveness .description p {
     width: 100%;
   }
 }
@@ -612,7 +612,7 @@
     font-size: 2.8rem;
     color: var(--btn-text-color);
   }
-  section.aboutme .aboutContainer .flexOne .social{
+  section.aboutme .aboutContainer .flexOne .social {
     flex-wrap: nowrap;
   }
   .mailContent h2 {
@@ -681,7 +681,7 @@
     align-items: center;
     margin: 1rem 0;
   }
-  section.aboutme .aboutContainer{
+  section.aboutme .aboutContainer {
     flex-direction: column;
     width: 95%;
     margin: 6rem 0 20rem 0;
@@ -689,37 +689,35 @@
   section.aboutme .aboutContainer .image {
     margin: 9rem 0 0 0;
   }
-  section.aboutme .aboutContainer .image::before{
+  section.aboutme .aboutContainer .image::before {
     right: 0;
   }
-  section.aboutme .aboutContainer .image h1{
+  section.aboutme .aboutContainer .image h1 {
     top: 20rem;
     right: 35rem;
-
   }
-  section.aboutme .aboutContainer .flexOne .social h3
-  {
+  section.aboutme .aboutContainer .flexOne .social h3 {
     font-size: 1.5rem;
     width: 12rem;
     height: 7rem;
     margin-right: 3rem;
   }
-  section.aboutme .aboutContainer .image span.react{
+  section.aboutme .aboutContainer .image span.react {
     font-size: 5rem;
   }
-  section.aboutme .aboutContainer .image span.html{
+  section.aboutme .aboutContainer .image span.html {
     font-size: 5rem;
     top: 10rem;
   }
-  section.aboutme .aboutContainer .image span.javascript{
+  section.aboutme .aboutContainer .image span.javascript {
     font-size: 5rem;
   }
-  section.aboutme .aboutContainer .image span.nextjs{
+  section.aboutme .aboutContainer .image span.nextjs {
     font-size: 5rem;
   }
 }
 @media (max-width: 580px) {
-  section.responsiveness .images{
+  section.responsiveness .images {
     width: 100%;
   }
   .mailContent form,
@@ -730,7 +728,7 @@
     height: 100vh;
     border-radius: 0;
   }
-  section.aboutme .aboutContainer .image h1{
+  section.aboutme .aboutContainer .image h1 {
     right: 20rem;
   }
   nav.navbar,
@@ -771,16 +769,22 @@
     padding: 0;
     height: auto;
   }
-  section.aboutme .aboutContainer .flexOne .social{
+  section.container .textHead h1 {
+    width: 90%;
+    font-size: 2rem;
+    line-height: 1.8;
+  }
+ 
+  section.aboutme .aboutContainer .flexOne .social {
     flex-direction: column;
   }
-  section.aboutme .aboutContainer .flexOne .social h3{
+  section.aboutme .aboutContainer .flexOne .social h3 {
     width: 100%;
     height: 8rem;
   }
   section.aboutme .aboutContainer .flexOne .social h3 span {
     font-size: 2rem;
-}
+  }
   section.protfolio button.viewAllBtn {
     margin: 5rem 0 0rem 0;
   }
