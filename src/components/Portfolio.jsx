@@ -13,6 +13,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import IframeLinks from "./IframeLinks";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 export default function Portfolio() {
   const [livelink, setLiveLink] = useState("");
   const [iframeopen, setFrameopen] = useState(false);
@@ -310,7 +311,7 @@ export default function Portfolio() {
                   <button>
                     <MdIcons.MdLiveTv />
                   </button>
-                  <img src={e.src} alt={e.name} />
+                  <LazyLoadImage src={e.src} alt={e.name} />
                 </div>
               );
             })}

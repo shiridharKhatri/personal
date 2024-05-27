@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { AiIcons, BiIcons, MdIcons } from "../tools/icons";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 export default function Testimonial() {
   const [currentIndex, setCurrentIndex] = useState(1);
   const reviews = [
@@ -120,7 +121,7 @@ export default function Testimonial() {
             <q>{currentReview.review}</q>
             <div className="imageTestimonial">
               {currentIndex <= 0 ? (
-                <img
+                <LazyLoadImage
                   style={{ opacity: "0" }}
                   id="prevImg"
                   src="/profile.webp"
@@ -130,7 +131,7 @@ export default function Testimonial() {
                   loading="lazy"
                 />
               ) : (
-                <img
+                <LazyLoadImage
                   id="prevImg"
                   src={
                     reviews[currentIndex - 1].display_name === "unknown"
@@ -143,7 +144,7 @@ export default function Testimonial() {
                 />
               )}
 
-              <img
+              <LazyLoadImage
                 id="currentImage"
                 src={
                   currentReview.display_name === "unknown"
@@ -155,7 +156,7 @@ export default function Testimonial() {
                 height={150}
               />
               {currentIndex === reviews.length - 1 ? (
-                <img
+                <LazyLoadImage
                   style={{ opacity: "0" }}
                   id="nextImg"
                   src="/profile.webp"
@@ -166,7 +167,7 @@ export default function Testimonial() {
                   height={150}
                 />
               ) : (
-                <img
+                <LazyLoadImage
                   id="nextImg"
                   src={
                     reviews[(currentIndex + 1) % reviews.length]

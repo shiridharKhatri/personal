@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BiIcons, BsIcons } from "../tools/icons";
+import { BiIcons } from "../tools/icons";
 import { Link } from "react-router-dom";
 
 export default function Blogs() {

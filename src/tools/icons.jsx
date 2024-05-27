@@ -79,8 +79,6 @@ import {
 import { TbPhoto } from "react-icons/tb";
 import { FaLocationDot } from "react-icons/fa6";
 import {
-  MdKeyboardVoice,
-  MdSettingsVoice,
   MdKeyboardArrowLeft,
   MdKeyboardArrowRight,
   MdDone,
@@ -105,8 +103,6 @@ const HiIcons = {
   HiPlus,
 };
 const MdIcons = {
-  MdKeyboardVoice,
-  MdSettingsVoice,
   MdKeyboardArrowLeft,
   MdKeyboardArrowRight,
   MdDone,

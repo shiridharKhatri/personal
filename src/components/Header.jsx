@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { CgIcons, MdIcons } from "../tools/icons";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import moment from "moment";
 export default function Header() {
   const scaleOne = useRef(null);
@@ -106,11 +107,13 @@ export default function Header() {
                 href="https://www.upwork.com/freelancers/shiridhark"
                 target="_blank"
               >
-                <button id="hireMe" style={{ color: "var(--black-white)" }}>Hire me</button>
+                <button id="hireMe" style={{ color: "var(--black-white)" }}>
+                  Hire me
+                </button>
               </a>
               <a href="/resume.pdf" target="_blank" title="Shiridhar-Resume">
                 <button
-                id="resume"
+                  id="resume"
                   style={{
                     background: "transparent",
                     color: "var(--btn-text-color)",
@@ -126,13 +129,13 @@ export default function Header() {
           </div>
           <div className="image">
             <h1 className="shadow"></h1>
-            <img src="/headImg.png" alt="image" />
+            <LazyLoadImage src="/headImg.png" alt="image" effect="blur" />
             <div className="clients" ref={scaleOne}>
               <div className="imgs">
-                <img src="/review/ally.webp" alt="ally" />
-                <img src="/review/neo.webp" alt="neo" />
-                <img src="/review/vis.webp" alt="vis" />
-                <img src="/review/aaisha.webp" alt="aaisha" />
+                <LazyLoadImage src="/review/ally.webp" alt="ally" />
+                <LazyLoadImage src="/review/neo.webp" alt="neo" />
+                <LazyLoadImage src="/review/vis.webp" alt="vis" />
+                <LazyLoadImage src="/review/aaisha.webp" alt="aaisha" />
                 <h2>+2</h2>
               </div>
               <p>Happy Clients</p>
@@ -155,7 +158,9 @@ export default function Header() {
       <section className="responsiveness" style={{ display: "flex" }}>
         <div className="description">
           <h4>Other skill</h4>
-          <h1><span>Responsive design</span> adapts websites to all screen sizes.</h1>
+          <h1>
+            <span>Responsive design</span> adapts websites to all screen sizes.
+          </h1>
           <p>
             Responsive web design means making websites that look good on any
             device. We can achieve this using media queries, which adjust the

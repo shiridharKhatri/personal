@@ -9,6 +9,7 @@ import {
   SiIcons,
   GrIcons,
 } from "../tools/icons";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 export default function Footer(props) {
   const [datas, setData] = useState([]);
   const socialicons = [
@@ -78,7 +79,7 @@ export default function Footer(props) {
     <footer id="footerId">
       <div className="topSection">
         <div className="topLogo">
-          <img src="/logo.png" alt="logo" />
+          <LazyLoadImage src="/logo.png" alt="logo" />
           <p id="footerP">
             Shiridhar Portfolio is a personal website designed to showcase my
             work, achievements, and professional details, providing a
@@ -143,6 +144,7 @@ export default function Footer(props) {
                             : null,
                       }}
                     >
+                      \
                       {e.language &&
                       (e.language.toLowerCase() === "html" ||
                         e.language.toLowerCase() === "javascript" ||
