@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
-import { driver } from "driver.js";
+import React, { useRef, useState } from "react";
 import "driver.js/dist/driver.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 export default function Contact() {
@@ -8,46 +7,13 @@ export default function Contact() {
   const messageRef = useRef(null);
   const emailRef = useRef(null);
   const [message, setMessage] = useState({ email: "", mes: "" });
-  
+
   const host = "https://personalbackend.onrender.com";
   const inpValOnChange = (e) => {
     const { name, value } = e.target;
     setInput({ ...input, [name]: value });
   };
 
-  useEffect(() => {
-    const driverObj = driver(
-      {
-      popoverClass: "driverjs-theme",
-      stagePadding: 0,
-      onDestroyed: () => {
-        document?.activeElement?.blur();
-      },
-    }
-  );
-    emailRef.current.addEventListener("focus", () => {
-      driverObj.highlight({
-        element: emailRef.current.id,
-        popover: {
-          title: "Name",
-          description: "Enter your name here",
-        },
-      });
-    });
-
-    messageRef.current.addEventListener("focus", () => {
-      driverObj.highlight({
-        element: messageRef.current.id,
-        popover: {
-          title: "Education",
-          description: "Enter your education here",
-        },
-      });
-    });
-    document.getElementById("form").addEventListener("blur", () => {
-      driverObj.destroy();
-    });
-  }, []);
   const sendMessage = async (e) => {
     e.preventDefault();
     let validate;
@@ -187,7 +153,12 @@ export default function Contact() {
       <div className="mailSection" id="mailId">
         <div className="cardMail">
           <div className="mailImage">
-            <LazyLoadImage src="/mail.gif" alt="message" width={300} height={50} />
+            <LazyLoadImage
+              src="/mail.gif"
+              alt="message"
+              width={300}
+              height={50}
+            />
           </div>
           <div className="mailContent">
             <h2>

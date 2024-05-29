@@ -144,7 +144,6 @@ export default function Footer(props) {
                             : null,
                       }}
                     >
-                      \
                       {e.language &&
                       (e.language.toLowerCase() === "html" ||
                         e.language.toLowerCase() === "javascript" ||
@@ -164,7 +163,7 @@ export default function Footer(props) {
                   </li>
                 );
               })}
-              <li style={{ cursor: "pointer" }}>More</li>
+             <a style={{textDecoration:"none"}} href="https://github.com/shiridharKhatri" target="_blank"><li style={{ cursor: "pointer" }}>More</li></a>
             </ul>
           </div>
           <div className="fourthSection">
