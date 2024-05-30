@@ -27,7 +27,7 @@ export default function Portfolio() {
       points: ["Business website", "Fully responsive", "visually appealing"],
       description:
         "The Ally Integra website is created using Vite + ReactJS and vanilla CSS, which is fully responsive for all types of screen sizes. The website is fast and optimized for better performance.",
-      link: "https://www.allyintegra.com/",
+      link: "https://github.com/shiridharKhatri",
     },
     {
       src: "/portfolioo/neo.png",
@@ -38,7 +38,7 @@ export default function Portfolio() {
       points: ["Portfolio website", "Fully responsive", "video showcase site"],
       description:
         "The NEO CALISTE portfolio website is recreated using HTML, CSS, JavaScript, and SCSS, which is fully responsive for all types of screen sizes. The website includes videos created by NEO CALISTE.",
-      link: "https://neocaliste.com/",
+      link: "https://github.com/shiridharKhatri",
     },
     {
       src: "/portfolioo/vis.png",
@@ -49,7 +49,7 @@ export default function Portfolio() {
       points: ["Portfolio website", "Fully responsive", "App showcase site"],
       description:
         "The Visbug Mobile App Development Agency website is created using HTML, CSS, and JavaScript. The site is fully responsive for all types of mobile devices, and the performance is high and optimized.",
-      link: "https://visbug.com/",
+      link: "https://github.com/shiridharKhatri",
     },
     {
       src: "/portfolioo/food.png",
@@ -64,7 +64,7 @@ export default function Portfolio() {
       tech: ["reactjs", "html", "css", "javascript"],
       description:
         "The Shah Food website is created using ReactJS, which is highly responsive and optimized for all types of screen sizes, from mobile to big screens.",
-      link: "https://shiny-travesseiro-9d5183.netlify.app/",
+      link: "https://github.com/shiridharKhatri",
     },
     {
       src: "/portfolioo/donor.png",
@@ -75,7 +75,7 @@ export default function Portfolio() {
       points: ["Donor website", "Fully responsive", "Information site"],
       description:
         "The Donor website is created using ReactJS, CSS which is highly responsive and optimized for all types of screen sizes, from mobile to big screens.",
-      link: "https://symphonious-frangollo-eb32ed.netlify.app/",
+      link: "https://github.com/shiridharKhatri",
     },
     {
       src: "/portfolioo/asta.png",
@@ -95,7 +95,7 @@ export default function Portfolio() {
       points: ["Realtime Chatting", "Create groups", "Talk with strangers"],
       description:
         "Aayu Chat is a random chatting website that i have created the using nextjs, nodejs-expressjs, socketio for real time chat and mongodb for database. The site is also responsive .",
-      link: "#",
+      link: "https://github.com/shiridharKhatri",
     },
     {
       src: "/portfolioo/news.png",
@@ -108,7 +108,7 @@ export default function Portfolio() {
         "Real time weather details",
       ],
       description: `The news website is created using ReactJS and the News API sourced from <a href="https://newsapi.org/">newsapi.org</a>. The site is fully responsive, providing real-time news updates and weather forecasts.`,
-      link: "#",
+      link: "https://github.com/shiridharKhatri",
     },
   ];
   const liveLink = (link) => {
@@ -203,9 +203,10 @@ export default function Portfolio() {
   };
   return (
     <section className="container protfolio">
-        <div className="textHead">
-        <h1 style={{margin:"7rem 0 0 0"}}>
-        Some the of highlighted <span>projects</span> I've successfully created.
+      <div className="textHead">
+        <h1 style={{ margin: "7rem 0 0 0" }}>
+          Some the of highlighted <span>projects</span> I've successfully
+          created.
         </h1>
       </div>
       <IframeLinks
@@ -225,7 +226,9 @@ export default function Portfolio() {
                   data-aos-anchor-placement="top-bottom"
                   data-aos-delay="150"
                 >
-                  <h1>{index+1}. {e.name}</h1>
+                  <h1>
+                    {index + 1}. {e.name}
+                  </h1>
                   {!e.star || e.star <= 0 ? (
                     ""
                   ) : (
@@ -251,11 +254,7 @@ export default function Portfolio() {
                   <ul>
                     {e.points.map((points, index) => {
                       return (
-                        <li
-                       
-                          className={`points${index}`}
-                          key={index}
-                        >
+                        <li className={`points${index}`} key={index}>
                           <span>
                             <FaIcons.FaRegDotCircle />
                           </span>
@@ -270,7 +269,7 @@ export default function Portfolio() {
                     }}
                     className="cssbuttons-io-button"
                   >
-                    View site
+                Github
                     <div className="icon">
                       <svg
                         height="24"
