@@ -2082,6 +2082,9 @@ section.responsiveness {
   margin: 0rem auto 0rem auto;
   background-image: var(--responsive-sec-bg);
   padding: 0 3rem 0 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 section.responsiveness .description {
   width: 46%;
