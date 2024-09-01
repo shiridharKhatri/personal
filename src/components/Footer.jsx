@@ -81,9 +81,8 @@ export default function Footer(props) {
         <div className="topLogo">
           <LazyLoadImage src="/logo.png" alt="logo" />
           <p id="footerP">
-            Shiridhar Portfolio is a personal website designed to showcase my
-            work, achievements, and professional details, providing a
-            comprehensive overview of my skills and experiences.
+            Shiridhar Portfolio is a personal website that highlights my work,
+            achievements, and professional details.
           </p>
         </div>
         <div className="flex-disp-footer">
@@ -163,7 +162,13 @@ export default function Footer(props) {
                   </li>
                 );
               })}
-             <a style={{textDecoration:"none"}} href="https://github.com/shiridharKhatri" target="_blank"><li style={{ cursor: "pointer" }}>More</li></a>
+              <a
+                style={{ textDecoration: "none" }}
+                href="https://github.com/shiridharKhatri"
+                target="_blank"
+              >
+                <li style={{ cursor: "pointer" }}>More</li>
+              </a>
             </ul>
           </div>
           <div className="fourthSection">
@@ -198,7 +203,7 @@ export default function Footer(props) {
                   <IoIcons.IoMail />
                 </span>
                 <a href="mailto:khatrishiridhar6@gmail.com">
-                  hello@shiridhar.me
+                  shiridharkhatri2@gmail.com
                 </a>
               </li>
             </ul>

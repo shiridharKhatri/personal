@@ -9,8 +9,7 @@ import {
   TbIcons,
   SiIcons,
 } from "../tools/icons";
-import { Link, redirect, useNavigate } from "react-router-dom";
-
+import { Link,useNavigate } from "react-router-dom";
 export default function Navbar(props) {
   const themeRef = useRef(null);
   const navigate = useNavigate();
@@ -174,15 +173,15 @@ export default function Navbar(props) {
                 </span>
                 About
               </li>
-              <li onClick={props.tour}>
+              <li>
                 <a
                   style={{
                     textDecoration: "none",
                     display: "flex",
                     color: "var(--color)",
                     fontWeight: "500",
-                    justifyContent:"center",
-                    alignItems:"center"
+                    justifyContent: "center",
+                    alignItems: "center",
                   }}
                   href="#testimonialId"
                 >
@@ -231,25 +230,40 @@ export default function Navbar(props) {
             </div>
 
             <ul id="DropDown">
+                <a
+                  style={{ textDecoration: "none", width: "100%" }}
+                  href="#blogs"
+                >
               <li>
-                <span>
-                  <BsIcons.BsBook />
-                </span>
-                Blogs
+                  <span>
+                    <BsIcons.BsBook />
+                  </span>
+                  Blogs
               </li>
-              <li>
-                <span>
-                  <CgIcons.CgFeed />
-                </span>
-                Projectfeed
-              </li>
+                </a>
+
+              <a
+                style={{ textDecoration: "none", width: "100%" }}
+                href="#protfolio"
+              >
+                <li>
+                  <span>
+                    <CgIcons.CgFeed />
+                  </span>
+                  Projectfeed
+                </li>
+              </a>
               <li>
                 <span>
                   <MdIcons.MdOutlineWorkspacePremium />
                 </span>
-                Paid Code <p>Coming soon</p>
+                Paid Code <p>Pending</p>
               </li>
-              <li>
+              <li
+                onClick={() => {
+                  window.open("https://github.com/shiridharKhatri", "_blank");
+                }}
+              >
                 <span>
                   <GoIcons.GoFileCode />
                 </span>
@@ -259,7 +273,7 @@ export default function Navbar(props) {
                 <span>
                   <TbIcons.TbPhoto />
                 </span>
-                Gallery <p>Coming soon</p>
+                Gallery <p>Pending</p>
               </li>
             </ul>
             <li

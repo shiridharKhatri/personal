@@ -1,19 +1,16 @@
 import React, { useRef, useState } from "react";
 import "driver.js/dist/driver.css";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 export default function Contact() {
   const [input, setInput] = useState({ email: "", message: "" });
   const successRef = useRef(null);
   const messageRef = useRef(null);
   const emailRef = useRef(null);
   const [message, setMessage] = useState({ email: "", mes: "" });
-
   const host = "https://personalbackend.onrender.com";
   const inpValOnChange = (e) => {
     const { name, value } = e.target;
     setInput({ ...input, [name]: value });
   };
-
   const sendMessage = async (e) => {
     e.preventDefault();
     let validate;
@@ -56,18 +53,15 @@ export default function Contact() {
         Accept: "*/*",
         "Content-Type": "application/json",
       };
-
       let bodyContent = JSON.stringify({
         email: input.email,
         message: input.message,
       });
-
       let response = await fetch(`${host}/messages/send`, {
         method: "POST",
         body: bodyContent,
         headers: headersList,
       });
-
       let data = await response.json();
       if (data.success === true) {
         successRef.current.style.top = "4rem";
@@ -153,7 +147,7 @@ export default function Contact() {
       <div className="mailSection" id="mailId">
         <div className="cardMail">
           <div className="mailImage">
-            <LazyLoadImage
+            <img
               src="/mail.gif"
               alt="message"
               width={300}

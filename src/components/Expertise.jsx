@@ -107,7 +107,9 @@ export default function Expertise() {
           check it out!
         </h3>
 
-        <button id="freeCodeId" className="learn-more">
+        <button onClick={()=>{
+          window.open("https://github.com/shiridharKhatri", "_blank");
+        }} id="freeCodeId" className="learn-more">
           <span className="circle" aria-hidden="true">
             <span className="icon arrow"></span>
           </span>

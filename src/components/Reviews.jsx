@@ -51,6 +51,14 @@ export default function Testimonial() {
       img: "/review/vis.webp",
       source: "upwork",
     },
+    {
+      review:
+        "I've worked with him twice, and both times, he did an amazing job. He brings a lot of enthusiasm and attention to detail, making sure the design matches what I want. He doesn't just make websites; he creates easy-to-use, engaging, and visually appealing experiences. He's proactive, communicates well, and is open to feedback, making the process smooth and enjoyable. I'm very happy with Shiridhar's work and look forward to working with him again. His creativity, skills, and work ethic are outstanding, and I highly recommend him.",
+      display_name: "Ally Integra",
+      star: 5,
+      img: "/review/ally.webp",
+      source: "upwork",
+    },
   ];
 
   const handleNext = () => {
@@ -173,9 +181,7 @@ export default function Testimonial() {
                     reviews[(currentIndex + 1) % reviews.length]
                       .display_name === "unknown"
                       ? "./anonymous.webp"
-                      : `${
-                          reviews[(currentIndex + 1) % reviews.length].img
-                        }`
+                      : `${reviews[(currentIndex + 1) % reviews.length].img}`
                   }
                   alt={
                     reviews[(currentIndex + 1) % reviews.length].display_name

@@ -27,7 +27,7 @@ export default function Blogs() {
     fetchItems();
   }, [host]);
   return (
-    <section className="container blogs">
+    <section id="blogs" className="container blogs">
       <div className="textHead">
 
         <h1>

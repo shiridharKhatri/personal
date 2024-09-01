@@ -1,13 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { CgIcons, MdIcons } from "../tools/icons";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import moment from "moment";
 export default function Header() {
   const scaleOne = useRef(null);
   const scaleTwo = useRef(null);
   const scaleThree = useRef(null);
   const [greeting, setGreeting] = useState("");
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 95) {
@@ -57,7 +55,6 @@ export default function Header() {
     };
     greetingText();
   }, []);
-
   useEffect(() => {
     let top = document.querySelector(".images img.top");
     let second = document.querySelector(".images img.second");
@@ -79,9 +76,7 @@ export default function Header() {
         fifth.style.right = "23rem";
       }
     };
-
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -129,13 +124,13 @@ export default function Header() {
           </div>
           <div className="image">
             <h1 className="shadow"></h1>
-            <LazyLoadImage src="/headImg.png" alt="image" effect="blur" />
+            <img src="/headImg.png" alt="image"/>
             <div className="clients" ref={scaleOne}>
               <div className="imgs">
-                <LazyLoadImage src="/review/ally.webp" alt="ally" />
-                <LazyLoadImage src="/review/neo.webp" alt="neo" />
-                <LazyLoadImage src="/review/vis.webp" alt="vis" />
-                <LazyLoadImage src="/review/aaisha.webp" alt="aaisha" />
+                <img src="/review/ally.webp" alt="ally" />
+                <img src="/review/neo.webp" alt="neo" />
+                <img src="/review/vis.webp" alt="vis" />
+                <img src="/review/aaisha.webp" alt="aaisha" />
                 <h2>+2</h2>
               </div>
               <p>Happy Clients</p>

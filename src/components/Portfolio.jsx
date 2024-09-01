@@ -202,7 +202,7 @@ export default function Portfolio() {
     console.log(link);
   };
   return (
-    <section className="container protfolio">
+    <section id="protfolio" className="container protfolio">
       <div className="textHead">
         <h1 style={{ margin: "7rem 0 0 0" }}>
           Some the of highlighted <span>projects</span> I've successfully

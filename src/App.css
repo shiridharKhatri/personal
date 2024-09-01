@@ -44,7 +44,7 @@ nav.navbar-scrolled {
 }
 nav .logo img {
   height: 8rem;
-  width: 100%;
+  width: 8rem;
 }
 nav ul {
   list-style: none;
@@ -138,10 +138,10 @@ nav .otherSec form {
   color: var(--btn-text-color);
 }
 #DropDown li P {
-  font-size: 1rem;
-  background: var(--btn-bg-color);
-  color: var(--btn-text-color);
-  height: 3rem;
+  font-size: .9rem;
+  background:#ff0000;
+  color: #ffffff;
+  height: 2.5rem;
   padding: 1rem;
   display: flex;
   justify-content: center;
@@ -304,6 +304,7 @@ nav ul li {
 #headerId .headContainer {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 95%;
   height: 100%;
   border-bottom: 0.1rem solid #cccccc;
@@ -1264,9 +1265,9 @@ section.mainMailSection .success__close path {
 }
 #footerP{
   color: var(--black-white);
-  width: 26rem;
-  text-align: center;
-  padding: 2rem 3rem 0;
+  width: 27rem;
+  text-align: left;
+  padding: 2rem 2rem 0;
   line-height: 1.5;
   opacity: 0.5;
 }
@@ -1753,14 +1754,14 @@ section.blogs .blogContainer .blogCards {
   -moz-box-shadow: -23px -200px 187px -67px rgba(0, 0, 0, 1) inset;
 }
 section.blogs .blogContainer .loading {
-  background: rgb(122, 122, 147);
+  background:#eeecec;
   box-shadow: none;
 }
 section.blogs .blogContainer .loading .details {
   width: 90%;
 }
 section.blogs .blogContainer .loading h2 {
-  background: #445;
+  background: #e0e0e0;
   height: 2rem;
   width: 100%;
   border-radius: 3rem;
@@ -1776,19 +1777,19 @@ section.blogs .blogContainer .loading button {
 }
 @keyframes loaderBlog {
   0% {
-    background: #445;
+    background: #e0e0e0;
   }
   25% {
-    background: rgb(93, 93, 117);
+    background: #bdbaba;
   }
   50% {
-    background: rgb(113, 113, 132);
+    background: #9f9c9c;
   }
   75% {
-    background: rgb(93, 93, 117);
+    background: #bdbaba;
   }
   100% {
-    background: #445;
+    background: #e0e0e0;
   }
 }
 section.blogs .blogContainer .blogCards .details {
