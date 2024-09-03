@@ -92,8 +92,8 @@ export default function Header() {
             </h1>
             <h1>Web Developer/Designer</h1>
             <p>
-              Full-stack developer with expertise in HTML, CSS, JavaScript,
-              ReactJS, NodeJS, MongoDB, AWS, Wordpress, and GoDaddy. I
+              Web developer with expertise in HTML, CSS, JavaScript,
+              ReactJS, NodeJS(Expressjs), MongoDB, AWS, Wordpress, and GoDaddy. I
               specialize in crafting engaging user interfaces and solid backend
               solutions for web apps.
             </p>
