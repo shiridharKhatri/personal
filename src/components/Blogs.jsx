@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 export default function Blogs() {
   const [blogs, setBlogs] = useState([]);
   const [success, setSuccess] = useState(false);
-  const host = "https://personalbackend.onrender.com";
+  const HOST = import.meta.env.VITE_HOST;
   useEffect(() => {
     async function fetchItems() {
       try {
-        const response = await fetch(`${host}/blog/fetchBlog`);
+        const response = await fetch(`${HOST}/blog/fetchBlog`);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -25,7 +25,7 @@ export default function Blogs() {
       }
     }
     fetchItems();
-  }, [host]);
+  }, [HOST]);
   return (
     <section id="blogs" className="container blogs">
       <div className="textHead">
@@ -42,7 +42,7 @@ export default function Blogs() {
               return (
                 <div
                   style={{
-                    backgroundImage: `url(${host}/img/${e.image})`,
+                    backgroundImage: `url(${HOST}/img/${e.image})`,
                     backgroundSize: "cover",
                     backgroundRepeat: "no-repeat",
                   }}

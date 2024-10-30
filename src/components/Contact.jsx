@@ -6,7 +6,7 @@ export default function Contact() {
   const messageRef = useRef(null);
   const emailRef = useRef(null);
   const [message, setMessage] = useState({ email: "", mes: "" });
-  const host = "https://personalbackend.onrender.com";
+  const HOST = import.meta.env.VITE_HOST;
   const inpValOnChange = (e) => {
     const { name, value } = e.target;
     setInput({ ...input, [name]: value });
@@ -57,7 +57,7 @@ export default function Contact() {
         email: input.email,
         message: input.message,
       });
-      let response = await fetch(`${host}/messages/send`, {
+      let response = await fetch(`${HOST}/messages/send`, {
         method: "POST",
         body: bodyContent,
         headers: headersList,

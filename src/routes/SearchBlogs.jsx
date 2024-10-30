@@ -9,12 +9,12 @@ export default function Blogs() {
   const [loader, setLoader] = useState(true);
   const params = useParams();
   const containerRef = useRef(null);
-  const host = "https://personalbackend.onrender.com";
+  const HOST = import.meta.env.VITE_HOST;
   useEffect(() => {
     async function fetchItems() {
       try {
         const response = await fetch(
-          `${host}/blog/fetchBlogs/search?q=${params.title}`
+          `${HOST}/blog/fetchBlogs/search?q=${params.title}`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -32,7 +32,7 @@ export default function Blogs() {
       }
     }
     fetchItems();
-  }, [host]);
+  }, [HOST]);
 
   useEffect(() => {
     containerRef.current.scrollTo({
@@ -73,7 +73,7 @@ export default function Blogs() {
               <div key={e._id} className="blogContainer">
                 <img
                   style={{ width: "100%" }}
-                  src={`${host}/img/${e.image}`}
+                  src={`${HOST}/img/${e.image}`}
                   alt="image"
                 />
                 <h2>{e.title}</h2>
