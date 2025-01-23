@@ -6,14 +6,6 @@ export default function Testimonial() {
   const reviews = [
     {
       review:
-        "I like it . Good color combination and they are eye comforting too. Overall it’s well made you did great job❤️",
-      reviewBy: "Aaisha gurung",
-      display_name: "Aaisha gurung",
-      star: 5,
-      img: "/review/aaisha.webp",
-    },
-    {
-      review:
         "Shiridhar is an A+ developer! Wen't above and beyond what was required to make sure that I was happy with the outcome! Highly recommended! Very responsive and works really fast! Shiridhar is the guy! 10/10!",
       display_name: "Neo Caliste",
       star: 5,

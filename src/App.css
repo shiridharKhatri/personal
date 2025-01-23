@@ -1,6 +1,12 @@
 body {
   background-color: var(--primary-background-color);
   width: 100%;
+  caret-color: transparent;
+  user-select: none;
+}
+.no-caret{
+  caret-color: transparent;
+  user-select: none;
 }
 p{
   font-family: "shiridhar-font";
