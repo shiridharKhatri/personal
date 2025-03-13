@@ -130,7 +130,7 @@ export default function Header() {
                 <img src="/review/ally.webp" alt="ally" />
                 <img src="/review/neo.webp" alt="neo" />
                 <img src="/review/vis.webp" alt="vis" />
-                <h2>+2</h2>
+                <h2>+6</h2>
               </div>
               <p>Happy Clients</p>
             </div>
