@@ -4,11 +4,11 @@ body {
   caret-color: transparent;
   user-select: none;
 }
-.no-caret{
+.no-caret {
   caret-color: transparent;
   user-select: none;
 }
-p{
+p {
   font-family: "shiridhar-font";
 }
 section,
@@ -144,8 +144,8 @@ nav .otherSec form {
   color: var(--btn-text-color);
 }
 #DropDown li P {
-  font-size: .9rem;
-  background:#ff0000;
+  font-size: 0.9rem;
+  background: #ff0000;
   color: #ffffff;
   height: 2.5rem;
   padding: 1rem;
@@ -348,10 +348,10 @@ nav ul li {
 #headerId .headContainer .image h1.shadow {
   box-shadow: 0px 0px 144px 63px var(--btn-text-color);
   position: absolute;
-  height: 5rem;
-  width: 5rem;
-  top: 23rem;
-  right: 18rem;
+  height: 10rem;
+  width: 10rem;
+  top: 12rem;
+  right: 15rem;
   z-index: -1;
   background: var(--btn-text-color);
 }
@@ -362,8 +362,8 @@ nav ul li {
   padding: 2rem 2rem 1rem 2rem;
   border-radius: 1rem;
   backdrop-filter: blur(0.5rem);
-  top: 14rem;
-  left: 17rem;
+  top: 10rem;
+  left: 100px;
   border: 0.1rem solid rgba(255, 255, 255, 0.2);
   display: flex;
   flex-direction: column;
@@ -383,7 +383,7 @@ nav ul li {
   border-radius: 1rem;
   backdrop-filter: blur(0.5rem);
   top: 18rem;
-  right: 3rem;
+  right: 0;
   border: 0.1rem solid rgba(255, 255, 255, 0.2);
   display: flex;
   justify-content: center;
@@ -398,7 +398,7 @@ nav ul li {
   padding: 1.5rem;
   border-radius: 1rem;
   backdrop-filter: blur(1rem);
-  top: 33rem;
+  top: 27rem;
   right: 25rem;
   border: 0.1rem solid rgba(255, 255, 255, 0.2);
   display: flex;
@@ -458,8 +458,9 @@ nav ul li {
   color: var(--black-white);
 }
 #headerId .headContainer img {
-  height: 40rem;
+  height: 30rem;
   margin-left: 15rem;
+  border-radius: 2rem;
 }
 #headerId .headContainer .buttons {
   display: flex;
@@ -496,16 +497,16 @@ section.container {
   justify-content: center;
   background: var(--secondary-background-color);
 }
-section.container h1{
+section.container h1 {
   width: 100%;
 }
-section.container .textHead{
+section.container .textHead {
   width: 93%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-section.container .textHead h1{
+section.container .textHead h1 {
   width: 50rem;
   font-size: 2.4rem;
   margin: 2rem 0 5rem 0;
@@ -514,10 +515,10 @@ section.container .textHead h1{
   line-height: 1.5;
   font-weight: bold;
 }
-section.container .textHead h1 span{
+section.container .textHead h1 span {
   background: var(--btn-text-color);
   color: var(--black-white);
-  padding: .7rem 1.5rem;
+  padding: 0.7rem 1.5rem;
   border-radius: 1rem;
 }
 
@@ -1190,7 +1191,6 @@ section.mainMailSection .success__close path {
   border: 2px solid var(--btn-text-color);
 }
 
-
 .mailContent form input {
   width: 100%;
   height: 45px;
@@ -1269,7 +1269,7 @@ section.mainMailSection .success__close path {
   align-items: flex-start;
   flex-direction: column;
 }
-#footerP{
+#footerP {
   color: var(--black-white);
   width: 27rem;
   text-align: left;
@@ -1404,7 +1404,7 @@ section.mainMailSection .success__close path {
 #footerId .topSection .topLogo img {
   height: 12rem;
 }
-#footerId .topSection .topLogo{
+#footerId .topSection .topLogo {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1760,7 +1760,7 @@ section.blogs .blogContainer .blogCards {
   -moz-box-shadow: -23px -200px 187px -67px rgba(0, 0, 0, 1) inset;
 }
 section.blogs .blogContainer .loading {
-  background:#eeecec;
+  background: #eeecec;
   box-shadow: none;
 }
 section.blogs .blogContainer .loading .details {
@@ -1979,7 +1979,7 @@ section.aboutme .aboutContainer .image {
   position: relative;
   height: 35rem;
 }
-section.aboutme .aboutContainer .image span.react{
+section.aboutme .aboutContainer .image span.react {
   position: absolute;
   left: 6rem;
   font-size: 3rem;
@@ -1988,12 +1988,12 @@ section.aboutme .aboutContainer .image span.react{
   display: flex;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(.7rem);
+  backdrop-filter: blur(0.7rem);
   border-radius: 1rem;
-  color: #61DBFB;
+  color: #61dbfb;
   top: 12rem;
 }
-section.aboutme .aboutContainer .image span.html{
+section.aboutme .aboutContainer .image span.html {
   position: absolute;
   right: 5rem;
   font-size: 3rem;
@@ -2002,35 +2002,35 @@ section.aboutme .aboutContainer .image span.html{
   display: flex;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(.7rem);
+  backdrop-filter: blur(0.7rem);
   border-radius: 1rem;
   color: #ea4335;
   top: 15rem;
 }
-section.aboutme .aboutContainer .image span.javascript{
+section.aboutme .aboutContainer .image span.javascript {
   position: absolute;
-left: 5rem;
+  left: 5rem;
   font-size: 3rem;
   background: rgba(255, 255, 255, 0.3);
   padding: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(.7rem);
+  backdrop-filter: blur(0.7rem);
   border-radius: 1rem;
-  color: #F0DB4F;
+  color: #f0db4f;
   bottom: 1rem;
 }
-section.aboutme .aboutContainer .image span.nextjs{
+section.aboutme .aboutContainer .image span.nextjs {
   position: absolute;
-right: 5rem;
+  right: 5rem;
   font-size: 3rem;
   background: rgba(255, 255, 255, 0.3);
   padding: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(.7rem);
+  backdrop-filter: blur(0.7rem);
   border-radius: 1rem;
   color: #000000;
   bottom: 1rem;
@@ -2038,7 +2038,7 @@ right: 5rem;
 section.aboutme .aboutContainer .image img {
   height: 100%;
 }
-section.aboutme .aboutContainer .image  h1{
+section.aboutme .aboutContainer .image h1 {
   box-shadow: 0px 0px 144px 63px var(--btn-text-color);
   position: absolute;
   height: 5rem;
@@ -2079,9 +2079,9 @@ section.aboutme .aboutContainer .flexOne .social h3 {
   flex-direction: column;
   width: 10rem;
 }
-section.aboutme .aboutContainer .flexOne .social h3  span{
+section.aboutme .aboutContainer .flexOne .social h3 span {
   font-size: 2rem;
-  margin-bottom: .4rem;
+  margin-bottom: 0.4rem;
 }
 section.responsiveness {
   width: 100%;
@@ -2098,7 +2098,7 @@ section.responsiveness .description {
   color: var(--color);
   margin-right: 3rem;
 }
-section.responsiveness .description h4{
+section.responsiveness .description h4 {
   font-family: "shiridhar-font";
   padding: 1rem 1rem;
   background: var(--btn-bg-color);
@@ -2113,12 +2113,12 @@ section.responsiveness .description h4{
   font-size: 1.2rem;
   font-weight: 400;
 }
-section.responsiveness .description h1 span{
+section.responsiveness .description h1 span {
   color: var(--btn-text-color);
 }
 section.responsiveness .description h1 {
   font-size: 3rem;
-  margin: .5rem 0 2rem 0;
+  margin: 0.5rem 0 2rem 0;
   font-family: "Lexend", sans-serif;
   color: var(--color);
   font-weight: bold;
@@ -2143,7 +2143,7 @@ section.responsiveness .images img {
   height: 30rem;
   position: absolute;
   transition: 0.3s ease all;
-  box-shadow: 0px 77px 67px -54px rgba(0,0,0,0.81);
+  box-shadow: 0px 77px 67px -54px rgba(0, 0, 0, 0.81);
   border-radius: 2rem;
 }
 section.responsiveness .images img.top {

@@ -89,12 +89,12 @@ export default function Portfolio() {
     },
     {
       src: "/portfolioo/chat.png",
-      name: "Aayu Chat",
+      name: "Anonymous Chat",
       color: "#3db6ff",
       tech: ["nextjs", "mongodb", "socket", "javascript", "nodejs"],
       points: ["Realtime Chatting", "Create groups", "Talk with strangers"],
       description:
-        "Aayu Chat is a random chatting website that i have created the using nextjs, nodejs-expressjs, socketio for real time chat and mongodb for database. The site is also responsive .",
+        "Anonymous Chat is a random chatting website that i have created the using nextjs, nodejs-expressjs, socketio for real time chat and mongodb for database. The site is also responsive .",
       link: "https://github.com/shiridharKhatri",
     },
     {
