@@ -9,11 +9,13 @@ import Contact from "../components/Contact";
 import Blogs from "../components/Blogs";
 import "driver.js/dist/driver.css";
 import AnimatedBlogs from "../components/AnimatedBlog";
+import AnimatedHeader from "../components/AnimatedHeader";
 export default function Root() {
   return (
     <>
       <Navbar />
-      <Header />
+      {/* <Header /> */}
+      <AnimatedHeader/>
       <Portfolio />
       <Expertise />
       {/* <Blogs /> */}
