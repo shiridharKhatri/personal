@@ -1,321 +1,452 @@
-import React, { useEffect, useState } from "react";
-import {
-  BiIcons,
-  SiIcons,
-  FaIcons,
-  GrIcons,
-  IoIcons,
-  AiIcons,
-  MdIcons,
-} from "../tools/icons";
+import { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import IframeLinks from "./IframeLinks";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import { FaRegDotCircle, FaNodeJs, FaGithub } from "react-icons/fa";
+import { BiLogoMongodb, BiLogoJavascript } from "react-icons/bi";
+import { IoLogoCss3, IoLogoSass } from "react-icons/io5";
+import { AiFillHtml5 } from "react-icons/ai";
+import { GrReactjs } from "react-icons/gr";
+import { SiNextdotjs, SiSocketdotio } from "react-icons/si";
+import {
+  MdKeyboardArrowLeft,
+  MdKeyboardArrowRight,
+  MdLiveTv,
+} from "react-icons/md";
+import "../style/portfolio-showcase.css";
 export default function Portfolio() {
-  const [livelink, setLiveLink] = useState("");
-  const [iframeopen, setFrameopen] = useState(false);
+  const [activeProject, setActiveProject] = useState(0);
+  const containerRef = useRef(null);
+  const deviceRef = useRef(null);
+  const infoRef = useRef(null);
+
   const portfolio = [
+    {
+      src: "/portfolioo/manifest.png",
+      name: "Manifest & Elevate",
+      color: "#8458b3",
+      star: 5,
+      device: "laptop",
+      tech: ["reactjs", "nodejs", "css", "javascript", "mongodb", "socket"],
+      points: [
+        "E-commerce & brand website",
+        "Responsive & performance-optimized",
+        "SEO & social sharing meta integration",
+      ],
+      description:
+        "Manifest & Elevate is a premium mindfulness brand website built using ReactJS. It features full SEO meta integration, Open Graph tags for rich link previews, and responsive design. It offers a clean, fast, and aesthetically pleasing shopping experience for journals, diaries, and more.",
+      link: "https://manifestandelevate.com",
+    },
+    {
+      src: "/portfolioo/techwave.png",
+      name: "TechWave",
+      color: "#000000",
+      star: 5,
+      device: "laptop",
+      tech: ["reactjs", "html", "css", "javascript"],
+      points: [
+        "Tech brand showcase",
+        "Modern, minimalist UI/UX",
+        "Product-focused and scalable",
+      ],
+      description:
+        "TechWave is a premium tech accessories brand website designed with ReactJS. The platform showcases a diverse product range across audio, wearables, and smart accessories. Built with a sleek and modern aesthetic, it reflects the brand’s mission to enhance digital lifestyles through innovation, quality, and user-centered design.",
+      link: "https://github.com/shiridharKhatri",
+    },
+    {
+      src: "/portfolioo/flexGym.png",
+      name: "FLEX GYM",
+      color: "#60b478",
+      star: 5,
+      device: "laptop",
+      tech: ["reactjs", "html", "css", "javascript"],
+      points: [
+        "Fitness center website",
+        "Inclusive & goal-oriented design",
+        "Responsive layout with trainer support features",
+      ],
+      description:
+        "FLEX GYM is a modern fitness website built with ReactJS, designed to motivate and guide users on their fitness journey. It emphasizes inclusivity and personal growth, offering a community-driven platform supported by expert trainers. The site features a clean, energetic UI and is optimized for all devices.",
+      link: "https://github.com/shiridharKhatri",
+    },
+    {
+      src: "/portfolioo/icp.png",
+      name: "Student Management System",
+      color: "#a41034",
+      star: 5,
+      device: "laptop",
+      tech: ["reactjs", "nodejs", "mongodb", "html", "css", "javascript"],
+      points: [
+        "Built during a hackathon competition",
+        "Centralized student data management",
+        "Admin, teacher & student roles with role-based access",
+        "Real-time updates and analytics dashboard",
+      ],
+      description:
+        "A college-focused Student Management System built during a hackathon using the MERN stack. It features role-based access for admins, teachers, and students, with real-time data handling and a clean, responsive interface.",
+      link: "https://github.com/shiridharKhatri",
+    },
+    {
+      src: "/portfolioo/shophub.png",
+      name: "E-commerce Platform",
+      color: "#1b4d3e",
+      star: 4.8,
+      device: "laptop",
+      tech: ["reactjs", "nodejs", "mongodb", "html", "css", "javascript"],
+      points: [
+        "Founded in 2018 with a customer-first approach",
+        "Offers thousands of products across diverse categories",
+        "Scalable platform supporting global users",
+        "Partnered with trusted brands and sellers",
+      ],
+      description:
+        "ShopHub is a full-featured e-commerce platform that started in 2018, aiming to provide a one-stop online shopping experience. It supports a wide range of product categories, serving millions globally with a focus on quality, affordability, and exceptional customer service.",
+      link: "https://github.com/shiridharKhatri",
+    },
+
     {
       src: "/portfolioo/ally.png",
       name: "Ally Integra",
       color: "#1d1d1d",
       star: 5,
+      device: "laptop",
       tech: ["reactjs", "html", "css", "javascript"],
       points: ["Business website", "Fully responsive", "visually appealing"],
       description:
         "The Ally Integra website is created using Vite + ReactJS and vanilla CSS, which is fully responsive for all types of screen sizes. The website is fast and optimized for better performance.",
       link: "https://github.com/shiridharKhatri",
     },
-    {
-      src: "/portfolioo/neo.png",
-      name: "Neo Caliste",
-      color: "#eef002",
-      star: 5,
-      tech: ["scss", "html", "css", "javascript"],
-      points: ["Portfolio website", "Fully responsive", "video showcase site"],
-      description:
-        "The NEO CALISTE portfolio website is recreated using HTML, CSS, JavaScript, and SCSS, which is fully responsive for all types of screen sizes. The website includes videos created by NEO CALISTE.",
-      link: "https://github.com/shiridharKhatri",
-    },
-    {
-      src: "/portfolioo/vis.png",
-      name: "The Visbug Agency",
-      color: "#fc2154",
-      star: 5,
-      tech: ["html", "css", "javascript"],
-      points: ["Portfolio website", "Fully responsive", "App showcase site"],
-      description:
-        "The Visbug Mobile App Development Agency website is created using HTML, CSS, and JavaScript. The site is fully responsive for all types of mobile devices, and the performance is high and optimized.",
-      link: "https://github.com/shiridharKhatri",
-    },
-    {
-      src: "/portfolioo/food.png",
-      name: "Shah Food",
-      color: "#1b9e98",
-      points: [
-        "Business website",
-        "Fully responsive",
-        "Business management site",
-      ],
-      star: 4,
-      tech: ["reactjs", "html", "css", "javascript"],
-      description:
-        "The Shah Food website is created using ReactJS, which is highly responsive and optimized for all types of screen sizes, from mobile to big screens.",
-      link: "https://github.com/shiridharKhatri",
-    },
-    {
-      src: "/portfolioo/donor.png",
-      name: "Donor Website",
-      color: "#358546",
-      star: 5,
-      tech: ["reactjs", "html", "css", "javascript"],
-      points: ["Donor website", "Fully responsive", "Information site"],
-      description:
-        "The Donor website is created using ReactJS, CSS which is highly responsive and optimized for all types of screen sizes, from mobile to big screens.",
-      link: "https://github.com/shiridharKhatri",
-    },
-    {
-      src: "/portfolioo/asta.png",
-      name: "Asta Wolf",
-      color: "#013546",
-      tech: ["nextjs", "html", "css", "javascript", "nodejs"],
-      points: ["E-commerce website", "Fully responsive", "Product buy/sell"],
-      description:
-        "Asta wolf is a e-commerce clone website that i have recreated the design using html, css and javascript the site is also responsive .",
-      link: "#",
-    },
-    {
-      src: "/portfolioo/chat.png",
-      name: "Anonymous Chat",
-      color: "#3db6ff",
-      tech: ["nextjs", "mongodb", "socket", "javascript", "nodejs"],
-      points: ["Realtime Chatting", "Create groups", "Talk with strangers"],
-      description:
-        "Anonymous Chat is a random chatting website that i have created the using nextjs, nodejs-expressjs, socketio for real time chat and mongodb for database. The site is also responsive .",
-      link: "https://github.com/shiridharKhatri",
-    },
-    {
-      src: "/portfolioo/news.png",
-      name: "Today News",
-      color: "#6a8e22",
-      tech: ["reactjs", "mongodb", "javascript", "nodejs"],
-      points: [
-        "Daily news update",
-        "News by category",
-        "Real time weather details",
-      ],
-      description: `The news website is created using ReactJS and the News API sourced from <a href="https://newsapi.org/">newsapi.org</a>. The site is fully responsive, providing real-time news updates and weather forecasts.`,
-      link: "https://github.com/shiridharKhatri",
-    },
+    // {
+    //   src: "/portfolioo/neo.png",
+    //   name: "Neo Caliste",
+    //   color: "#eef002",
+    //   star: 5,
+    //   device: "laptop",
+    //   tech: ["scss", "html", "css", "javascript"],
+    //   points: ["Portfolio website", "Fully responsive", "video showcase site"],
+    //   description:
+    //     "The NEO CALISTE portfolio website is recreated using HTML, CSS, JavaScript, and SCSS, which is fully responsive for all types of screen sizes. The website includes videos created by NEO CALISTE.",
+    //   link: "https://github.com/shiridharKhatri",
+    // },
+    // {
+    //   src: "/portfolioo/vis.png",
+    //   name: "The Visbug Agency",
+    //   color: "#fc2154",
+    //   star: 5,
+    //   device: "laptop",
+    //   tech: ["html", "css", "javascript"],
+    //   points: ["Portfolio website", "Fully responsive", "App showcase site"],
+    //   description:
+    //     "The Visbug Mobile App Development Agency website is created using HTML, CSS, and JavaScript. The site is fully responsive for all types of mobile devices, and the performance is high and optimized.",
+    //   link: "https://github.com/shiridharKhatri",
+    // },
+    // {
+    //   src: "/portfolioo/food.png",
+    //   name: "Shah Food",
+    //   color: "#1b9e98",
+    //   device: "laptop",
+    //   points: [
+    //     "Business website",
+    //     "Fully responsive",
+    //     "Business management site",
+    //   ],
+    //   star: 4,
+    //   tech: ["reactjs", "html", "css", "javascript"],
+    //   description:
+    //     "The Shah Food website is created using ReactJS, which is highly responsive and optimized for all types of screen sizes, from mobile to big screens.",
+    //   link: "https://github.com/shiridharKhatri",
+    // },
+    // {
+    //   src: "/portfolioo/donor.png",
+    //   name: "Donor Website",
+    //   color: "#358546",
+    //   star: 5,
+    //   device: "laptop",
+    //   tech: ["reactjs", "html", "css", "javascript"],
+    //   points: ["Donor website", "Fully responsive", "Information site"],
+    //   description:
+    //     "The Donor website is created using ReactJS, CSS which is highly responsive and optimized for all types of screen sizes, from mobile to big screens.",
+    //   link: "https://github.com/shiridharKhatri",
+    // },
+    // {
+    //   src: "/portfolioo/asta.png",
+    //   name: "Asta Wolf",
+    //   color: "#013546",
+    //   device: "laptop",
+    //   tech: ["nextjs", "html", "css", "javascript", "nodejs"],
+    //   points: ["E-commerce website", "Fully responsive", "Product buy/sell"],
+    //   description:
+    //     "Asta wolf is a e-commerce clone website that i have recreated the design using html, css and javascript the site is also responsive.",
+    //   link: "#",
+    // },
+    // {
+    //   src: "/portfolioo/chat.png",
+    //   name: "Anonymous Chat",
+    //   color: "#3db6ff",
+    //   device: "laptop",
+    //   tech: ["nextjs", "mongodb", "socket", "javascript", "nodejs"],
+    //   points: ["Realtime Chatting", "Create groups", "Talk with strangers"],
+    //   description:
+    //     "Anonymous Chat is a random chatting website that i have created the using nextjs, nodejs-expressjs, socketio for real time chat and mongodb for database. The site is also responsive.",
+    //   link: "https://github.com/shiridharKhatri",
+    // },
+    // {
+    //   src: "/portfolioo/news.png",
+    //   name: "Today News",
+    //   color: "#6a8e22",
+    //   device: "laptop",
+    //   tech: ["reactjs", "mongodb", "javascript", "nodejs"],
+    //   points: [
+    //     "Daily news update",
+    //     "News by category",
+    //     "Real time weather details",
+    //   ],
+    //   description: `The news website is created using ReactJS and the News API sourced from <a href="https://newsapi.org/">newsapi.org</a>. The site is fully responsive, providing real-time news updates and weather forecasts.`,
+    //   link: "https://github.com/shiridharKhatri",
+    // },
   ];
-  const liveLink = (link) => {
+
+  const icons = {
+    nextjs: <SiNextdotjs />,
+    nodejs: <FaNodeJs />,
+    reactjs: <GrReactjs />,
+    mongodb: <BiLogoMongodb />,
+    css: <IoLogoCss3 />,
+    javascript: <BiLogoJavascript />,
+    html: <AiFillHtml5 />,
+    scss: <IoLogoSass />,
+    socket: <SiSocketdotio />,
+  };
+
+  const openGithub = (link) => {
     window.open(link, "_blank");
   };
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+  const viewLive = (link) => {
+    window.open(link, "_blank");
+  };
 
-    gsap.set(".photo:not(:first-child)", {
-      display: "none",
+  const nextProject = () => {
+    gsap.to([deviceRef.current, infoRef.current], {
       opacity: 0,
-      scale: 0.5,
+      x: -30,
+      duration: 0.2,
+      onComplete: () => {
+        setActiveProject((prev) =>
+          prev < portfolio.length - 1 ? prev + 1 : 0
+        );
+        gsap.to([deviceRef.current, infoRef.current], {
+          opacity: 1,
+          x: 0,
+          duration: 0.3,
+          stagger: 0.1,
+        });
+      },
     });
+  };
 
-    const animation = gsap.to(".photo:not(:first-child)", {
-      opacity: 1,
-      scale: 1,
-      duration: 1,
-      stagger: 1,
-      display: "flex",
+  const prevProject = () => {
+    gsap.to([deviceRef.current, infoRef.current], {
+      opacity: 0,
+      x: 30,
+      duration: 0.2,
+      onComplete: () => {
+        setActiveProject((prev) =>
+          prev > 0 ? prev - 1 : portfolio.length - 1
+        );
+        gsap.to([deviceRef.current, infoRef.current], {
+          opacity: 1,
+          x: 0,
+          duration: 0.3,
+          stagger: 0.1,
+        });
+      },
     });
+  };
 
-    ScrollTrigger.create({
-      trigger: ".gallery",
-      start: "0 top",
-      end: "bottom bottom",
-      pin: ".right",
-      animation: animation,
-      scrub: true,
-      // markers: true,
+  useEffect(() => {
+    // Initial animation
+    gsap.fromTo(
+      containerRef.current,
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+    );
+
+    // Device animation
+    gsap.fromTo(
+      deviceRef.current,
+      { opacity: 0, scale: 0.9, rotationY: -10 },
+      {
+        opacity: 1,
+        scale: 1,
+        rotationY: 0,
+        duration: 0.5,
+        ease: "back.out(1.7)",
+      }
+    );
+
+    // Info animation
+    gsap.fromTo(
+      infoRef.current,
+      { opacity: 0, x: 30 },
+      { opacity: 1, x: 0, duration: 0.5, delay: 0.2, ease: "power2.out" }
+    );
+
+    // Floating animation for device
+    gsap.to(deviceRef.current, {
+      y: 10,
+      duration: 1.5,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      gsap.killTweensOf(deviceRef.current);
+      gsap.killTweensOf(infoRef.current);
+      gsap.killTweensOf(containerRef.current);
     };
   }, []);
-  const icons = {
-    nextjs: <SiIcons.SiNextdotjs />,
-    nodejs: <FaIcons.FaNodeJs />,
-    reactjs: <GrIcons.GrReactjs />,
-    mongodb: <BiIcons.BiLogoMongodb />,
-    css: <IoIcons.IoLogoCss3 />,
-    javascript: <BiIcons.BiLogoJavascript />,
-    html: <AiIcons.AiFillHtml5 />,
-    scss: <IoIcons.IoLogoSass />,
-    socket: <SiIcons.SiSocketdotio />,
-  };
-  function getRatingStars(rating) {
-    const fullStars = Math.floor(rating);
-    const halfStars = Math.ceil(rating - fullStars);
-    const emptyStars = 5 - fullStars - halfStars;
-    const stars = [];
 
-    for (let i = 0; i < fullStars; i++) {
-      stars.push(
-        <h3 key={`full-star-${i}`} className="stars">
-          <AiIcons.AiFillStar />
-        </h3>
-      );
-    }
+  const currentProject = portfolio[activeProject];
 
-    for (let i = 0; i < halfStars; i++) {
-      stars.push(
-        <h3 key={`half-star-${i}`} className="stars">
-          <AiIcons.AiFillStar style={{ opacity: 0.5 }} />
-        </h3>
-      );
-    }
-
-    for (let i = 0; i < emptyStars; i++) {
-      stars.push(
-        <h3 key={`empty-star-${i}`} className="stars">
-          <AiIcons.AiOutlineStar />
-        </h3>
-      );
-    }
-    return stars;
-  }
-  useEffect(() => {
-    AOS.init();
-  }, []);
-  const viewLiveInSite = (link) => {
-    if (iframeopen === true) {
-      setFrameopen(false);
-      setLiveLink(link);
-    } else {
-      setFrameopen(true);
-      setLiveLink(link);
-    }
-    console.log(link);
-  };
   return (
-    <section id="protfolio" className="container protfolio">
+    <section id="protfolio" className="container protfolio" ref={containerRef}>
       <div className="textHead">
         <h1 style={{ margin: "7rem 0 0 0" }}>
-          Some the of highlighted <span>projects</span> I've successfully
+          Some of the highlighted <span>projects</span> I've successfully
           created.
         </h1>
       </div>
-      <IframeLinks
-        link={livelink}
-        isOpen={iframeopen}
-        setFrameopen={setFrameopen}
-      />
-      <div className="gallery">
-        <div className="left">
-          <div className="detailsWrapper">
-            {portfolio.map((e, index) => {
-              return (
-                <div
-                  key={index}
-                  className="details"
-                  data-aos="fade-up-right"
-                  data-aos-anchor-placement="top-bottom"
-                  data-aos-delay="150"
-                >
-                  <h1>
-                    {index + 1}. {e.name}
-                  </h1>
-                  {!e.star || e.star <= 0 ? (
-                    ""
-                  ) : (
-                    <div className="star">
-                      <span>{getRatingStars(e.star)}</span>
-                      |&nbsp;&nbsp;{e.star} Star&nbsp;&nbsp;|&nbsp;&nbsp;Client
-                    </div>
-                  )}
-                  <p dangerouslySetInnerHTML={{ __html: e.description }}></p>
-                  <div className="icons">
-                    {e.tech.includes("nextjs") && <h4>{icons.nextjs}</h4>}
-                    {e.tech.includes("nodejs") && <h4>{icons.nodejs}</h4>}
-                    {e.tech.includes("reactjs") && <h4>{icons.reactjs}</h4>}
-                    {e.tech.includes("mongodb") && <h4>{icons.mongodb}</h4>}
-                    {e.tech.includes("css") && <h4>{icons.css}</h4>}
-                    {e.tech.includes("javascript") && (
-                      <h4>{icons.javascript}</h4>
-                    )}
-                    {e.tech.includes("html") && <h4>{icons.html}</h4>}
-                    {e.tech.includes("scss") && <h4>{icons.scss}</h4>}
-                    {e.tech.includes("socket") && <h4>{icons.socket}</h4>}
-                  </div>
-                  <ul>
-                    {e.points.map((points, index) => {
-                      return (
-                        <li className={`points${index}`} key={index}>
-                          <span>
-                            <FaIcons.FaRegDotCircle />
-                          </span>
-                          {points}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                  <button
-                    onClick={() => {
-                      liveLink(e.link);
-                    }}
-                    className="cssbuttons-io-button"
-                  >
-                Github
-                    <div className="icon">
-                      <svg
-                        height="24"
-                        width="24"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M0 0h24v24H0z" fill="none"></path>
-                        <path
-                          d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
-                          fill="currentColor"
-                        ></path>
-                      </svg>
-                    </div>
-                  </button>
+
+      <div className="portfolio-showcase">
+        <div className="device-container" ref={deviceRef}>
+          {currentProject.device === "laptop" && (
+            <div className="laptop-mockup">
+              <div className="laptop-screen">
+                <img
+                  src={currentProject.src || "/placeholder.svg"}
+                  alt={currentProject.name}
+                />
+              </div>
+              <div className="laptop-base">
+                <div className="laptop-keyboard"></div>
+                <div className="laptop-trackpad"></div>
+              </div>
+            </div>
+          )}
+
+          {currentProject.device === "phone" && (
+            <div className="phone-mockup">
+              <div className="phone-frame">
+                <div className="phone-notch"></div>
+                <div className="phone-screen">
+                  <img
+                    src={currentProject.src || "/placeholder.svg"}
+                    alt={currentProject.name}
+                  />
                 </div>
-              );
-            })}
-          </div>
+                <div className="phone-button"></div>
+              </div>
+            </div>
+          )}
+
+          {currentProject.device === "tablet" && (
+            <div className="tablet-mockup">
+              <div className="tablet-frame">
+                <div className="tablet-camera"></div>
+                <div className="tablet-screen">
+                  <img
+                    src={currentProject.src || "/placeholder.svg"}
+                    alt={currentProject.name}
+                  />
+                </div>
+                <div className="tablet-button"></div>
+              </div>
+            </div>
+          )}
         </div>
 
-        <div className="right">
-          <div className="photos">
-            {portfolio.map((e, index) => {
-              return (
-                <div
-                  className="photo"
-                  key={index}
-                  onClick={() => {
-                    viewLiveInSite(e.link);
-                  }}
-                >
-                  <div
-                    style={{ boxShadow: `0px 0px 125px 0px ${e.color}` }}
-                    className="glowEffect"
-                    id={`glowEffect${index}`}
-                  ></div>
-                  <button>
-                    <MdIcons.MdLiveTv />
-                  </button>
-                  <LazyLoadImage src={e.src} alt={e.name} />
-                </div>
-              );
-            })}
+        <div className="project-info" ref={infoRef}>
+          <h2 style={{ color: currentProject.color }}>{currentProject.name}</h2>
+          <p
+            dangerouslySetInnerHTML={{ __html: currentProject.description }}
+          ></p>
+
+          <div className="tech-stack">
+            {currentProject.tech.map((tech, index) => (
+              <div
+                className="tech-icon"
+                key={index}
+                style={{ color: currentProject.color }}
+              >
+                {icons[tech]}
+                {/* <span>{tech}</span> */}
+              </div>
+            ))}
+          </div>
+
+          <div className="project-features">
+            <h3>Key Features:</h3>
+            <ul>
+              {currentProject.points.map((point, index) => (
+                <li key={index}>
+                  <FaRegDotCircle />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="project-actions">
+            <button
+              className="github-btn"
+              onClick={() => openGithub(currentProject.link)}
+            >
+              <FaGithub /> View on GitHub
+            </button>
+            <button
+              className="live-btn"
+              onClick={() => viewLive(currentProject.link)}
+            >
+              <MdLiveTv /> View Live
+            </button>
           </div>
         </div>
+      </div>
+      <div className="pagBtn">
+        <button className="nav-btn next-btn" onClick={nextProject}>
+          <MdKeyboardArrowRight />
+        </button>
+
+        <button className="nav-btn prev-btn" onClick={prevProject}>
+          <MdKeyboardArrowLeft />
+        </button>
+      </div>
+
+      <div className="portfolio-pagination">
+        {portfolio.map((_, index) => (
+          <span
+            key={index}
+            className={`pagination-dot ${
+              index === activeProject ? "active" : ""
+            }`}
+            onClick={() => {
+              gsap.to([deviceRef.current, infoRef.current], {
+                opacity: 0,
+                scale: 0.95,
+                duration: 0.2,
+                onComplete: () => {
+                  setActiveProject(index);
+                  gsap.to([deviceRef.current, infoRef.current], {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.3,
+                    stagger: 0.1,
+                  });
+                },
+              });
+            }}
+          ></span>
+        ))}
       </div>
     </section>
   );

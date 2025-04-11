@@ -1,17 +1,22 @@
-import React, { useEffect, useState } from "react";
-import { BiIcons } from "../tools/icons";
-import { Link } from "react-router-dom";
+import { useEffect, useRef } from "react"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { BiChevronRight } from "react-icons/bi"
+import { Link } from "react-router-dom"
 
-export default function Blogs() {
-  // const [blogs, setBlogs] = useState([]);
-  const [success, setSuccess] = useState(true);
-  const HOST = import.meta.env.VITE_HOST;
+gsap.registerPlugin(ScrollTrigger)
 
+export default function AnimatedBlogs() {
+  const containerRef = useRef(null)
+  const headingRef = useRef(null)
+  const cardsRef = useRef(null)
+
+  // Static blog data
   const blogs = [
     {
       _id: "blog1",
       title: "The Future of Web Development: What to Expect in 2025",
-      image: "/blog/webdevelopment.png",
+      image: "blog1.jpg",
       color: "#5626c4",
       description:
         "Explore the upcoming trends and technologies that will shape web development in the coming years, from AI integration to advanced animations.",
@@ -115,95 +120,127 @@ export default function Blogs() {
     },
   ]
 
-  // useEffect(() => {
-  //   async function fetchItems() {
-  //     try {
-  //       const response = await fetch(`${HOST}/blog/fetchBlog`);
-  //       if (!response.ok) {
-  //         throw new Error("Network response was not ok");
-  //       }
-  //       const data = await response.json();
-  //       setBlogs(data.blog);
-  //       if (data.success === true) {
-  //         setSuccess(true);
-  //       } else {
-  //         setSuccess(false);
-  //       }
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //     }
-  //   }
-  //   fetchItems();
-  // }, [HOST]);
-  return (
-    <section id="blogs" className="container blogs">
-      <div className="textHead">
+  useEffect(() => {
+    // Heading animation
+    gsap.fromTo(
+      headingRef.current,
+      { y: 50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: headingRef.current,
+          start: "top 80%",
+        },
+      },
+    )
 
+    // Blog cards animation
+    const blogCards = cardsRef.current.querySelectorAll(".blogCards")
+
+    blogCards.forEach((card, index) => {
+      gsap.fromTo(
+        card,
+        {
+          y: 100,
+          opacity: 0,
+          scale: 0.9,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 0.8,
+          delay: index * 0.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 90%",
+          },
+        },
+      )
+
+      // Hover animation
+      card.addEventListener("mouseenter", () => {
+        gsap.to(card, {
+          y: -10,
+          boxShadow: "0 20px 30px rgba(0, 0, 0, 0.2)",
+          duration: 0.3,
+          ease: "power2.out",
+        })
+      })
+
+      card.addEventListener("mouseleave", () => {
+        gsap.to(card, {
+          y: 0,
+          boxShadow: "0 5px 15px rgba(0, 0, 0, 0.1)",
+          duration: 0.3,
+          ease: "power2.out",
+        })
+      })
+    })
+
+    // Create a special animation for the first and last cards
+    gsap.fromTo(
+      blogCards[0],
+      { rotationZ: -5 },
+      {
+        rotationZ: 0,
+        duration: 1.5,
+        ease: "elastic.out(1, 0.3)",
+        scrollTrigger: {
+          trigger: blogCards[0],
+          start: "top 80%",
+        },
+      },
+    )
+
+    gsap.fromTo(
+      blogCards[blogCards.length - 1],
+      { rotationZ: 5 },
+      {
+        rotationZ: 0,
+        duration: 1.5,
+        ease: "elastic.out(1, 0.3)",
+        scrollTrigger: {
+          trigger: blogCards[blogCards.length - 1],
+          start: "top 80%",
+        },
+      },
+    )
+  }, [])
+
+  return (
+    <section id="blogs" className="container blogs" ref={containerRef}>
+      <div className="textHead" ref={headingRef}>
         <h1>
-          Read our <span>latest blog</span> posts, updated to keep you informed
-          and engaged.
+          Read our <span>latest blog</span> posts, updated to keep you informed and engaged.
         </h1>
       </div>
-      <div className="blogContainer">
-        {success === true ? (
-          <>
-            {blogs?.slice(-4).map((e) => {
-              return (
-                <div
-                  style={{
-                    backgroundImage: e.image,
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                  }}
-                  key={e._id}
-                  className="blogCards"
-                >
-                  <div className="details">
-                    <h2>{e.title}</h2>
-                    <Link to={`blogs/${e._id}/${e.title}`}>
-                      <button style={{ background: e.color }}>
-                        Read more&nbsp;
-                        <BiIcons.BiChevronRight />
-                      </button>
-                    </Link>
-                  </div>
-                </div>
-              );
-            })}
-          </>
-        ) : (
-          <>
-            <div className="blogCards loading">
-              <div className="details">
-                <h2></h2>
-                <h2></h2>
-                <button></button>
-              </div>
+      <div className="blogContainer" ref={cardsRef}>
+        {blogs.map((blog, index) => (
+          <div
+            key={blog._id}
+            className="blogCards"
+            style={{
+              backgroundImage: `url(/blog/${blog.image})`,
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+            }}
+          >
+            <div className="details">
+              <h2>{blog.title}</h2>
+              <Link to={`blogs/${blog._id}/${blog.title}`}>
+                <button style={{ background: blog.color }}>
+                  Read more&nbsp;
+                  <BiChevronRight />
+                </button>
+              </Link>
             </div>
-            <div className="blogCards loading">
-              <div className="details">
-                <h2></h2>
-                <h2></h2>
-                <button></button>
-              </div>
-            </div>
-            <div className="blogCards loading">
-              <div className="details">
-                <h2></h2>
-                <h2></h2>
-                <button></button>
-              </div>
-            </div>
-            <div className="blogCards loading">
-              <div className="details">
-                <h2></h2>
-                <h2></h2>
-                <button></button>
-              </div>
-            </div>
-          </>
-        )}
+          </div>
+        ))}
       </div>
     </section>
-  );
+  )
 }
