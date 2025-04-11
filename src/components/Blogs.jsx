@@ -19,17 +19,20 @@ export default function Blogs() {
         {
           _id: "p1",
           title: "AI Integration",
-          description: "How artificial intelligence is becoming a standard part of modern websites",
+          description:
+            "How artificial intelligence is becoming a standard part of modern websites",
         },
         {
           _id: "p2",
           title: "WebAssembly",
-          description: "The rise of high-performance web applications through WebAssembly",
+          description:
+            "The rise of high-performance web applications through WebAssembly",
         },
         {
           _id: "p3",
           title: "3D Experiences",
-          description: "Creating immersive 3D experiences with Three.js and WebGL",
+          description:
+            "Creating immersive 3D experiences with Three.js and WebGL",
         },
         {
           _id: "p4",
@@ -42,7 +45,7 @@ export default function Blogs() {
     {
       _id: "blog2",
       title: "Mastering GSAP Animations for Modern Websites",
-      image: "blog2.jpg",
+      image: "/blog/gsap.jpg",
       color: "#00abe1",
       description:
         "Learn how to create stunning animations with GSAP that will take your website to the next level and impress your visitors.",
@@ -50,25 +53,33 @@ export default function Blogs() {
         {
           _id: "p1",
           title: "Basics of GSAP",
-          description: "Understanding the core concepts of GSAP animation library",
+          description:
+            "Understanding the core concepts of GSAP animation library",
         },
         {
           _id: "p2",
           title: "ScrollTrigger",
-          description: "Creating scroll-based animations that respond to user interaction",
+          description:
+            "Creating scroll-based animations that respond to user interaction",
         },
-        { _id: "p3", title: "Performance", description: "Optimizing animations for better performance across devices" },
+        {
+          _id: "p3",
+          title: "Performance",
+          description:
+            "Optimizing animations for better performance across devices",
+        },
         {
           _id: "p4",
           title: "Conclusion",
-          description: "GSAP is a powerful tool that can significantly enhance user experience when used correctly",
+          description:
+            "GSAP is a powerful tool that can significantly enhance user experience when used correctly",
         },
       ],
     },
     {
       _id: "blog3",
       title: "Building Responsive E-commerce Sites with React",
-      image: "blog3.jpg",
+      image: "/blog/react.png",
       color: "#f7cd46",
       description:
         "A comprehensive guide to creating responsive and user-friendly e-commerce websites using React and modern design principles.",
@@ -76,25 +87,32 @@ export default function Blogs() {
         {
           _id: "p1",
           title: "Planning",
-          description: "The importance of proper planning and architecture for e-commerce sites",
+          description:
+            "The importance of proper planning and architecture for e-commerce sites",
         },
         {
           _id: "p2",
           title: "Components",
-          description: "Creating reusable components for product listings, cart, and checkout",
+          description:
+            "Creating reusable components for product listings, cart, and checkout",
         },
-        { _id: "p3", title: "Responsive Design", description: "Ensuring your site works perfectly on all devices" },
+        {
+          _id: "p3",
+          title: "Responsive Design",
+          description: "Ensuring your site works perfectly on all devices",
+        },
         {
           _id: "p4",
           title: "Conclusion",
-          description: "React provides the perfect foundation for building modern e-commerce experiences",
+          description:
+            "React provides the perfect foundation for building modern e-commerce experiences",
         },
       ],
     },
     {
       _id: "blog4",
       title: "The Power of Three.js: Creating Interactive 3D Web Experiences",
-      image: "blog4.jpg",
+      image: "/blog/three.png",
       color: "#fc2154",
       description:
         "Dive into the world of 3D web development with Three.js and learn how to create immersive experiences for your users.",
@@ -102,18 +120,30 @@ export default function Blogs() {
         {
           _id: "p1",
           title: "Getting Started",
-          description: "Setting up your first Three.js project and understanding the basics",
+          description:
+            "Setting up your first Three.js project and understanding the basics",
         },
-        { _id: "p2", title: "3D Models", description: "Working with 3D models and textures in your web applications" },
-        { _id: "p3", title: "Interactions", description: "Adding user interactions to create engaging experiences" },
+        {
+          _id: "p2",
+          title: "3D Models",
+          description:
+            "Working with 3D models and textures in your web applications",
+        },
+        {
+          _id: "p3",
+          title: "Interactions",
+          description:
+            "Adding user interactions to create engaging experiences",
+        },
         {
           _id: "p4",
           title: "Conclusion",
-          description: "Three.js opens up new possibilities for creating unique web experiences",
+          description:
+            "Three.js opens up new possibilities for creating unique web experiences",
         },
       ],
     },
-  ]
+  ];
 
   // useEffect(() => {
   //   async function fetchItems() {
@@ -138,7 +168,6 @@ export default function Blogs() {
   return (
     <section id="blogs" className="container blogs">
       <div className="textHead">
-
         <h1>
           Read our <span>latest blog</span> posts, updated to keep you informed
           and engaged.
@@ -151,13 +180,15 @@ export default function Blogs() {
               return (
                 <div
                   style={{
-                    backgroundImage: e.image,
+                    backgroundImage: `url(${e.image})`,
                     backgroundSize: "cover",
                     backgroundRepeat: "no-repeat",
+                    position: "relative",
                   }}
                   key={e._id}
                   className="blogCards"
                 >
+                  
                   <div className="details">
                     <h2>{e.title}</h2>
                     <Link to={`blogs/${e._id}/${e.title}`}>
