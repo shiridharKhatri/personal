@@ -15,7 +15,7 @@ function App() {
       element: <Root />,
     },
     {
-      path: "blogs/:blogId/:title",
+      path: "blogs/:blogId/",
       element: <Blogs />,
     },
     {

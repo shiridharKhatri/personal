@@ -8,6 +8,7 @@ import Reviews from "../components/Reviews";
 import Contact from "../components/Contact";
 import Blogs from "../components/Blogs";
 import "driver.js/dist/driver.css";
+import AnimatedBlogs from "../components/AnimatedBlog";
 export default function Root() {
   return (
     <>
@@ -15,7 +16,8 @@ export default function Root() {
       <Header />
       <Portfolio />
       <Expertise />
-      <Blogs />
+      {/* <Blogs /> */}
+      <AnimatedBlogs/>
       <Services />
       <Reviews />
       <Contact />

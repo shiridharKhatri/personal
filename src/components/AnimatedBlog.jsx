@@ -3,7 +3,7 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { BiChevronRight } from "react-icons/bi"
 import { Link } from "react-router-dom"
-
+import "../style/blog.css"
 gsap.registerPlugin(ScrollTrigger)
 
 export default function AnimatedBlogs() {
@@ -16,7 +16,7 @@ export default function AnimatedBlogs() {
     {
       _id: "blog1",
       title: "The Future of Web Development: What to Expect in 2025",
-      image: "blog1.jpg",
+      image: "/blog/webdevelopment.png",
       color: "#5626c4",
       description:
         "Explore the upcoming trends and technologies that will shape web development in the coming years, from AI integration to advanced animations.",
@@ -47,7 +47,7 @@ export default function AnimatedBlogs() {
     {
       _id: "blog2",
       title: "Mastering GSAP Animations for Modern Websites",
-      image: "blog2.jpg",
+      image: "/blog/gsap.jpg",
       color: "#00abe1",
       description:
         "Learn how to create stunning animations with GSAP that will take your website to the next level and impress your visitors.",
@@ -73,7 +73,7 @@ export default function AnimatedBlogs() {
     {
       _id: "blog3",
       title: "Building Responsive E-commerce Sites with React",
-      image: "blog3.jpg",
+      image: "/blog/react.png",
       color: "#f7cd46",
       description:
         "A comprehensive guide to creating responsive and user-friendly e-commerce websites using React and modern design principles.",
@@ -99,7 +99,7 @@ export default function AnimatedBlogs() {
     {
       _id: "blog4",
       title: "The Power of Three.js: Creating Interactive 3D Web Experiences",
-      image: "blog4.jpg",
+      image: "/blog/three.png",
       color: "#fc2154",
       description:
         "Dive into the world of 3D web development with Three.js and learn how to create immersive experiences for your users.",
@@ -128,7 +128,7 @@ export default function AnimatedBlogs() {
       {
         y: 0,
         opacity: 1,
-        duration: 1,
+        duration: 0.7,
         scrollTrigger: {
           trigger: headingRef.current,
           start: "top 80%",
@@ -137,22 +137,22 @@ export default function AnimatedBlogs() {
     )
 
     // Blog cards animation
-    const blogCards = cardsRef.current.querySelectorAll(".blogCards")
+    const blogCards = cardsRef.current.querySelectorAll(".blog-card")
 
     blogCards.forEach((card, index) => {
       gsap.fromTo(
         card,
         {
-          y: 100,
+          y: 50,
           opacity: 0,
-          scale: 0.9,
+          scale: 0.95,
         },
         {
           y: 0,
           opacity: 1,
           scale: 1,
-          duration: 0.8,
-          delay: index * 0.2,
+          duration: 0.6,
+          delay: index * 0.1,
           ease: "power3.out",
           scrollTrigger: {
             trigger: card,
@@ -165,46 +165,67 @@ export default function AnimatedBlogs() {
       card.addEventListener("mouseenter", () => {
         gsap.to(card, {
           y: -10,
-          boxShadow: "0 20px 30px rgba(0, 0, 0, 0.2)",
+          boxShadow: "0 20px 30px rgba(0, 0, 0, 0.15)",
           duration: 0.3,
           ease: "power2.out",
+        })
+
+        // Animate image zoom
+        const image = card.querySelector(".blog-card-image img")
+        gsap.to(image, {
+          scale: 1.1,
+          duration: 0.5,
+          ease: "power2.out",
+        })
+
+        // Animate button
+        const button = card.querySelector(".read-more-btn")
+        gsap.to(button, {
+          backgroundColor: card.dataset.color,
+          color: "#fff",
+          scale: 1.05,
+          duration: 0.3,
         })
       })
 
       card.addEventListener("mouseleave", () => {
         gsap.to(card, {
           y: 0,
-          boxShadow: "0 5px 15px rgba(0, 0, 0, 0.1)",
+          boxShadow: "0 10px 20px rgba(0, 0, 0, 0.1)",
           duration: 0.3,
           ease: "power2.out",
+        })
+
+        // Reset image zoom
+        const image = card.querySelector(".blog-card-image img")
+        gsap.to(image, {
+          scale: 1,
+          duration: 0.5,
+          ease: "power2.out",
+        })
+
+        // Reset button
+        const button = card.querySelector(".read-more-btn")
+        gsap.to(button, {
+          backgroundColor: "#fff",
+          color: card.dataset.color,
+          scale: 1,
+          duration: 0.3,
         })
       })
     })
 
-    // Create a special animation for the first and last cards
+    // Create a special animation for the featured card
     gsap.fromTo(
-      blogCards[0],
-      { rotationZ: -5 },
+      ".featured-blog-card",
+      { opacity: 0, scale: 0.9 },
       {
-        rotationZ: 0,
-        duration: 1.5,
-        ease: "elastic.out(1, 0.3)",
+        opacity: 1,
+        scale: 1,
+        duration: 0.8,
+        ease: "elastic.out(1, 0.5)",
         scrollTrigger: {
-          trigger: blogCards[0],
-          start: "top 80%",
-        },
-      },
-    )
-
-    gsap.fromTo(
-      blogCards[blogCards.length - 1],
-      { rotationZ: 5 },
-      {
-        rotationZ: 0,
-        duration: 1.5,
-        ease: "elastic.out(1, 0.3)",
-        scrollTrigger: {
-          trigger: blogCards[blogCards.length - 1],
+          trigger: ".featured-blog-card",
           start: "top 80%",
         },
       },
@@ -218,28 +239,47 @@ export default function AnimatedBlogs() {
           Read our <span>latest blog</span> posts, updated to keep you informed and engaged.
         </h1>
       </div>
-      <div className="blogContainer" ref={cardsRef}>
-        {blogs.map((blog, index) => (
-          <div
-            key={blog._id}
-            className="blogCards"
-            style={{
-              backgroundImage: `url(/blog/${blog.image})`,
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-            }}
-          >
-            <div className="details">
-              <h2>{blog.title}</h2>
-              <Link to={`blogs/${blog._id}/${blog.title}`}>
-                <button style={{ background: blog.color }}>
-                  Read more&nbsp;
-                  <BiChevronRight />
+
+      <div className="blogs-container" ref={cardsRef}>
+        <div className="featured-blog">
+          <div className="featured-blog-card" data-color={blogs[0].color}>
+            <div className="featured-blog-content">
+              <div className="featured-blog-tag" style={{ backgroundColor: blogs[0].color, width: "fit-content" }}>
+                Featured
+              </div>
+              <h2>{blogs[0].title}</h2>
+              <p>{blogs[0].description}</p>
+              <Link to={`blogs/${blogs[0]._id}`} style={{ textDecoration: "none" }}>
+                <button className="featured-read-more-btn" style={{ backgroundColor: blogs[0].color }}>
+                  Read Article <BiChevronRight />
                 </button>
               </Link>
             </div>
+            <div className="featured-blog-image">
+              <img src={blogs[0].image || "/placeholder.svg"} alt={blogs[0].title} />
+            </div>
           </div>
-        ))}
+        </div>
+
+        <div className="blog-grid">
+          {blogs.slice(1).map((blog) => (
+            <div key={blog._id} className="blog-card" data-color={blog.color}>
+              <div className="blog-card-image">
+                <img src={blog.image || "/placeholder.svg"} alt={blog.title} />
+                <div className="blog-card-overlay" style={{ backgroundColor: blog.color }}></div>
+              </div>
+              <div className="blog-card-content">
+                <h3>{blog.title}</h3>
+                <p>{blog.description.substring(0, 100)}...</p>
+                <Link to={`blogs/${blog._id}`} style={{ textDecoration: "none" }}>
+                  <button className="read-more-btn" style={{ color: blog.color, borderColor: blog.color }}>
+                    Read More <BiChevronRight />
+                  </button>
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )
