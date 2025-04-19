@@ -36,9 +36,32 @@ export default function Portfolio() {
       link: "https://manifestandelevate.com",
     },
     {
+      src: "/portfolioo/nexus.png",
+      name: "Nexus AI",
+      color: "#2d9fe9",
+      star: 5,
+      device: "laptop",
+      tech: [
+        "reactjs",
+        "nodejs",
+        "css",
+        "javascript",
+        "mongodb",
+        "socket",
+      ],
+      points: [
+        "Smart real-time chatbot with contextual memory",
+        "Responsive UI with typing animations",
+        "Integrated with OpenAI for natural conversations",
+      ],
+      description:
+        "Nexus AI is a smart conversational chatbot built using ReactJS and NodeJS. It uses OpenAI's API to deliver human-like responses and maintain context throughout the chat. With real-time Socket.io communication, sleek UI, and adaptive design, it's perfect for websites looking to enhance user interaction through intelligent automation.",
+      link: "https://nexusai.shiridhar.com.np",
+    },
+    {
       src: "/portfolioo/techwave.png",
       name: "TechWave",
-      color: "#000000",
+      color: "var(--color)",
       star: 5,
       device: "laptop",
       tech: ["reactjs", "html", "css", "javascript"],
@@ -105,7 +128,7 @@ export default function Portfolio() {
     {
       src: "/portfolioo/ally.png",
       name: "Ally Integra",
-      color: "#1d1d1d",
+      color: "var(--color)",
       star: 5,
       device: "laptop",
       tech: ["reactjs", "html", "css", "javascript"],
