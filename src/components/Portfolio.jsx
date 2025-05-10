@@ -36,19 +36,28 @@ export default function Portfolio() {
       link: "https://manifestandelevate.com",
     },
     {
+      src: "/portfolioo/dashboard.png",
+      name: "E-Commerce Admin Dashboard",
+      color: "#1447e6",
+      star: 5,
+      device: "laptop",
+      tech: ["reactjs", "nodejs", "mongodb"],
+      points: [
+        "Role-based access and authentication",
+        "Manage products, users, orders, and categories",
+        "Real-time analytics with interactive charts",
+      ],
+      description:
+        "The Admin Dashboard is a powerful backend interface for managing an e-commerce platform. Built with ReactJS and NodeJS, it offers secure JWT-based authentication, product and order management, and real-time sales analytics. The dashboard is fully responsive and designed for fast and intuitive use by admins and staff.",
+      link: "https://com",
+    },
+    {
       src: "/portfolioo/nexus.png",
       name: "Nexus AI",
       color: "#2d9fe9",
       star: 5,
       device: "laptop",
-      tech: [
-        "reactjs",
-        "nodejs",
-        "css",
-        "javascript",
-        "mongodb",
-        "socket",
-      ],
+      tech: ["reactjs", "nodejs", "css", "javascript", "mongodb", "socket"],
       points: [
         "Smart real-time chatbot with contextual memory",
         "Responsive UI with typing animations",
