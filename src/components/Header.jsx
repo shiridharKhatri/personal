@@ -124,7 +124,7 @@ export default function Header() {
           </div>
           <div className="image">
             <h1 className="shadow"></h1>
-            <img src="/profile.png" alt="image"/>
+            <img src="/profile2.png" alt="image"/>
             <div className="clients" ref={scaleOne}>
               <div className="imgs">
                 <img src="/review/ally.webp" alt="ally" />

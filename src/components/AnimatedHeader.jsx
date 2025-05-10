@@ -259,7 +259,7 @@ export default function AnimatedHeader() {
               <div className="image-border"></div>
               <div className="image-mask"></div>
               <div className="professional-image" ref={imageRef}>
-                <img src="/profile.png" alt="Shiridhar Khatri" />
+                <img src="/profile2.png" alt="Shiridhar Khatri" />
               </div>
             </div>
           </div>
