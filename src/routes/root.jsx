@@ -18,7 +18,6 @@ export default function Root() {
       <AnimatedHeader/>
       <Portfolio />
       <Expertise />
-      {/* <Blogs /> */}
       <AnimatedBlogs/>
       <Services />
       <Reviews />

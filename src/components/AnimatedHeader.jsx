@@ -188,7 +188,35 @@ export default function AnimatedHeader() {
     }
   }
 
+   useEffect(() => {
+      let top = document.querySelector(".images img.top");
+      let second = document.querySelector(".images img.second");
+      let third = document.querySelector(".images img.third");
+      let forth = document.querySelector(".images img.forth");
+      let fifth = document.querySelector(".images img.fifth");
+      const handleScroll = () => {
+        if (window.scrollY >= 400 && window.scrollY <= 900) {
+          top.style.height = "30rem";
+          second.style.left = "12rem";
+          third.style.right = "12rem";
+          forth.style.left = "6rem";
+          fifth.style.right = "6rem";
+        } else {
+          top.style.height = "35rem";
+          second.style.left = "23rem";
+          third.style.right = "23rem";
+          forth.style.left = "23rem";
+          fifth.style.right = "23rem";
+        }
+      };
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, []);
+
   return (
+      <>
     <section className="professional-hero" ref={heroRef}>
       <div className="professional-hero-container">
         <div className="professional-hero-content" ref={contentRef}>
@@ -271,5 +299,56 @@ export default function AnimatedHeader() {
         </div> */}
       </div>
     </section>
+  
+     <section className="responsiveness" style={{ display: "flex" }}>
+        <div className="description">
+          <h4>Other skill</h4>
+          <h1>
+            <span>Responsive design</span> adapts websites to all screen sizes.
+          </h1>
+          <p>
+            Responsive web design means making websites that look good on any
+            device. We can achieve this using media queries, which adjust the
+            layout based on screen size. Alternatively, we can use frameworks
+            like Bootstrap or Tailwind CSS, which provide ready-made tools for
+            creating responsive designs. In short, responsiveness ensures that a
+            website works well whether it's viewed on a big computer screen or a
+            small smartphone. I am proficient in making responsive designs as
+            well.
+          </p>
+        </div>
+        <div className="images">
+          <img
+            id="forth"
+            className="forth"
+            src="/responsiveness/forth.png"
+            alt="forth"
+          />
+          <img
+            id="second"
+            className="second"
+            src="/responsiveness/second.png"
+            alt="second"
+          />
+          <img
+            id="top"
+            className="top"
+            src="/responsiveness/top.png"
+            alt="top"
+          />
+          <img
+            id="third"
+            className="third"
+            src="/responsiveness/third.png"
+            alt="third"
+          />
+          <img
+            id="fifth"
+            className="fifth"
+            src="/responsiveness/fifth.png"
+            alt="fifth"
+          />
+        </div>
+      </section></>
   )
 }
