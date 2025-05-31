@@ -84,7 +84,7 @@ export default function ApiXShowcase() {
   }
 
   const handleGithub = () => {
-    window.open("https://github.com/your-username/apix-extension", "_blank")
+    window.open("#", "_blank")
   }
 
   return (
