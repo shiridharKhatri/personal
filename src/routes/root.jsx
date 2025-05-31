@@ -10,12 +10,14 @@ import Blogs from "../components/Blogs";
 import "driver.js/dist/driver.css";
 import AnimatedBlogs from "../components/AnimatedBlog";
 import AnimatedHeader from "../components/AnimatedHeader";
+import ApiXShowcase from "../components/ApiXShowcase";
 export default function Root() {
   return (
     <>
       <Navbar />
       {/* <Header /> */}
       <AnimatedHeader/>
+      <ApiXShowcase/>
       <Portfolio />
       <Expertise />
       <AnimatedBlogs/>
