@@ -243,13 +243,13 @@ export default function AnimatedHeader() {
                 Hire Me
               </a>
               <a
-                href="/resume.pdf"
+                href="https://github.com/shiridharKhatri"
                 target="_blank"
-                title="Shiridhar-Resume"
+                title="shiridharKhatri"
                 rel="noreferrer"
                 className="professional-secondary-btn"
               >
-                View Resume
+                Github
               </a>
             </div>
 
