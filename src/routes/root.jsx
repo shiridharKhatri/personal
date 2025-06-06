@@ -11,13 +11,17 @@ import "driver.js/dist/driver.css";
 import AnimatedBlogs from "../components/AnimatedBlog";
 import AnimatedHeader from "../components/AnimatedHeader";
 import ApiXShowcase from "../components/ApiXShowcase";
+import ProductShowcase from "../components/ProductShowcase";
+import PromoPopup from "../components/PromoPopup";
 export default function Root() {
   return (
     <>
+    <PromoPopup/>
       <Navbar />
       {/* <Header /> */}
       <AnimatedHeader/>
       <ApiXShowcase/>
+      <ProductShowcase/>
       <Portfolio />
       <Expertise />
       <AnimatedBlogs/>
