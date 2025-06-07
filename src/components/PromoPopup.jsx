@@ -85,7 +85,7 @@ export default function PromoPopup() {
         <div className="popup-container">
           <div className="popup-left">
             <div className="popup-image">
-              <img src="/premium/fivOne.png" alt="Professional Web Development" />
+              <img src="/adBannerSm.png" alt="Professional Web Development" />
             </div>
           </div>
 

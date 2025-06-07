@@ -79,6 +79,7 @@
   width: 40%;
   position: relative;
   overflow: hidden;
+
 }
 
 .popup-image {
@@ -246,10 +247,12 @@
   .popup-left,
   .popup-right {
     width: 100%;
+    
   }
 
   .popup-left {
     height: 200px;
+      display: none;
   }
 
   .popup-right {
