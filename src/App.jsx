@@ -22,10 +22,10 @@ function App() {
       path: "blog/:title",
       element: <SearchBlogs />,
     },
-    {
-      path: "about",
-      element: <About />,
-    },
+    // {
+    //   path: "about",
+    //   element: <About />,
+    // },
     {
       path: "*",
       element: <Notfound/>,

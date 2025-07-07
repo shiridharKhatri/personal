@@ -163,7 +163,7 @@ export default function Navbar(props) {
                 Home
               </li>
 
-              <li
+              {/* <li
                 onClick={() => {
                   routeTo("/about");
                 }}
@@ -172,7 +172,7 @@ export default function Navbar(props) {
                   <BsIcons.BsInfoLg />
                 </span>
                 About
-              </li>
+              </li> */}
               <li>
                 <a
                   style={{
