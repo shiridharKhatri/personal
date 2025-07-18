@@ -8,27 +8,29 @@ import Blogs from "./routes/Blogs";
 import SearchBlogs from "./routes/SearchBlogs";
 import About from "./routes/About";
 import Notfound from "./routes/Notfound";
+import ScrollToTopLayout from "./components/ScrollToTop";
 function App() {
   const router = createBrowserRouter([
     {
-      path: "/",
-      element: <Root />,
-    },
-    {
-      path: "blogs/:blogId/",
-      element: <Blogs />,
-    },
-    {
-      path: "blog/:title",
-      element: <SearchBlogs />,
-    },
-    // {
-    //   path: "about",
-    //   element: <About />,
-    // },
-    {
       path: "*",
-      element: <Notfound/>,
+      element: <Notfound />,
+    },
+    {
+      element: <ScrollToTopLayout />,
+      children: [
+        {
+          path: "/",
+          element: <Root />,
+        },
+        {
+          path: "blogs/:blogId/",
+          element: <Blogs />,
+        },
+        {
+          path: "blog/:title",
+          element: <SearchBlogs />,
+        },
+      ],
     },
   ]);
   useEffect(() => {
