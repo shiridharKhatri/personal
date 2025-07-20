@@ -1,91 +1,84 @@
-import React, { useEffect, useState, useRef } from "react";
-import {
-  MdIcons,
-  BiIcons,
-  IoIcons,
-  BsIcons,
-  CgIcons,
-  GoIcons,
-  TbIcons,
-  SiIcons,
-} from "../tools/icons";
-import { Link,useNavigate } from "react-router-dom";
+"use client"
+
+import { useEffect, useState, useRef } from "react"
+import { MdIcons, BiIcons, IoIcons, BsIcons, CgIcons, GoIcons, TbIcons, SiIcons } from "../tools/icons"
+import { Link, useNavigate } from "react-router-dom"
 export default function Navbar(props) {
-  const themeRef = useRef(null);
-  const navigate = useNavigate();
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isDarkMode, setDarkMode] = useState(false);
-  const [inpVal, setInpVal] = useState("");
+  const themeRef = useRef(null)
+  const navigate = useNavigate()
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isDarkMode, setDarkMode] = useState(false)
+  const [inpVal, setInpVal] = useState("")
   const onChangeState = (e) => {
-    setInpVal(e.target.value);
-  };
+    setInpVal(e.target.value)
+  }
   const sideMenuOnClick = () => {
-    const sideMenu = document.getElementById("sideMenu");
-    sideMenu.style.left = "0";
-  };
+    const sideMenu = document.getElementById("sideMenu")
+    sideMenu.style.left = "0"
+  }
   const cancelMenuOnClick = () => {
-    const sideMenu = document.getElementById("sideMenu");
-    sideMenu.style.left = "-100%";
-  };
+    const sideMenu = document.getElementById("sideMenu")
+    sideMenu.style.left = "-100%"
+  }
   const showMenuOnClick = () => {
-    let id = document.getElementById("DropDown");
-    id.classList.toggle("togglMoreSec");
+    const id = document.getElementById("DropDown")
+    id.classList.toggle("togglMoreSec")
     if (id.classList.contains("togglMoreSec")) {
-      id.style.transform = "scale(1)";
+      id.style.transform = "scale(1)"
     } else {
-      id.style.transform = "scale(0)";
+      id.style.transform = "scale(0)"
     }
-  };
+  }
 
   const changeTheme = () => {
-    themeRef.current.classList.toggle("darkTheme");
+    themeRef.current.classList.toggle("darkTheme")
     if (themeRef.current.classList.contains("darkTheme")) {
-      document.body.classList.add("darkMode");
-      setDarkMode(true);
+      document.body.classList.add("darkMode")
+      setDarkMode(true)
     } else {
-      document.body.classList.remove("darkMode");
-      setDarkMode(false);
+      document.body.classList.remove("darkMode")
+      setDarkMode(false)
     }
-  };
+  }
   const focused = () => {
-    const logoFirst = document.getElementById("logoFirst");
-    const formSecSearch = document.getElementById("formSecSearch");
-    const closeSearch = document.getElementById("closeSearch");
-    logoFirst.style.display = "none";
-    formSecSearch.style.width = "100%";
-    closeSearch.style.display = "flex";
-  };
+    const logoFirst = document.getElementById("logoFirst")
+    const formSecSearch = document.getElementById("formSecSearch")
+    const closeSearch = document.getElementById("closeSearch")
+    logoFirst.style.display = "none"
+    formSecSearch.style.width = "100%"
+    closeSearch.style.display = "flex"
+  }
   const blurred = () => {
-    const logoFirst = document.getElementById("logoFirst");
-    const formSecSearch = document.getElementById("formSecSearch");
-    const closeSearch = document.getElementById("closeSearch");
-    logoFirst.style.display = "flex";
-    formSecSearch.style.width = "75%";
-    closeSearch.style.display = "none";
-  };
+    const logoFirst = document.getElementById("logoFirst")
+    const formSecSearch = document.getElementById("formSecSearch")
+    const closeSearch = document.getElementById("closeSearch")
+    logoFirst.style.display = "flex"
+    formSecSearch.style.width = "75%"
+    closeSearch.style.display = "none"
+  }
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY >= 150) {
-        setIsScrolled(true);
+        setIsScrolled(true)
       } else {
-        setIsScrolled(false);
+        setIsScrolled(false)
       }
-    };
+    }
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll)
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
   const searchBlogs = (e) => {
-    e.preventDefault();
-    console.log(inpVal);
-    navigate(`/blog/${inpVal}`);
-  };
+    e.preventDefault()
+    console.log(inpVal)
+    navigate(`/blog/${inpVal}`)
+  }
   const routeTo = (route) => {
-    navigate(route);
-  };
+    navigate(route)
+  }
   return (
     <nav
       style={{ position: props.position, background: props.background }}
@@ -115,12 +108,7 @@ export default function Navbar(props) {
           </button>
         </form>
         <form id="hiddenInMobile">
-          <input
-            type="search"
-            value={inpVal}
-            onChange={onChangeState}
-            placeholder="Search blogs..."
-          />
+          <input type="search" value={inpVal} onChange={onChangeState} placeholder="Search blogs..." />
           <button
             name="Search"
             style={{
@@ -154,7 +142,7 @@ export default function Navbar(props) {
               </div>
               <li
                 onClick={() => {
-                  routeTo("/");
+                  routeTo("/")
                 }}
               >
                 <span className="hidden">
@@ -164,15 +152,15 @@ export default function Navbar(props) {
               </li>
 
               {/* <li
-                onClick={() => {
-                  routeTo("/about");
-                }}
-              >
-                <span className="hidden">
-                  <BsIcons.BsInfoLg />
-                </span>
-                About
-              </li> */}
+              onClick={() => {
+                routeTo("/about");
+              }}
+            >
+              <span className="hidden">
+                <BsIcons.BsInfoLg />
+              </span>
+              About
+            </li> */}
               <li>
                 <a
                   style={{
@@ -230,22 +218,16 @@ export default function Navbar(props) {
             </div>
 
             <ul id="DropDown">
-                <a
-                  style={{ textDecoration: "none", width: "100%" }}
-                  href="#blogs"
-                >
-              <li>
+              <a style={{ textDecoration: "none", width: "100%" }} href="#blogs">
+                <li>
                   <span>
                     <BsIcons.BsBook />
                   </span>
                   Blogs
-              </li>
-                </a>
+                </li>
+              </a>
 
-              <a
-                style={{ textDecoration: "none", width: "100%" }}
-                href="#protfolio"
-              >
+              <a style={{ textDecoration: "none", width: "100%" }} href="#protfolio">
                 <li>
                   <span>
                     <CgIcons.CgFeed />
@@ -261,7 +243,7 @@ export default function Navbar(props) {
               </li>
               <li
                 onClick={() => {
-                  window.open("https://github.com/shiridharKhatri", "_blank");
+                  window.open("https://github.com/shiridharKhatri", "_blank")
                 }}
               >
                 <span>
@@ -269,12 +251,16 @@ export default function Navbar(props) {
                 </span>
                 Free code
               </li>
-              <li>
-                <span>
-                  <TbIcons.TbPhoto />
-                </span>
-                Gallery <p>Pending</p>
-              </li>
+              <Link to="/gallery" style={{ textDecoration: "none", width: "100%" }}>
+                {" "}
+                {/* Updated Link */}
+                <li>
+                  <span>
+                    <TbIcons.TbPhoto />
+                  </span>
+                  Gallery
+                </li>
+              </Link>
             </ul>
             <li
               style={{
@@ -297,5 +283,5 @@ export default function Navbar(props) {
         </div>
       </div>
     </nav>
-  );
+  )
 }

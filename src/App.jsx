@@ -1,14 +1,16 @@
-import "./App.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Root from "./routes/root";
-import Footer from "./components/Footer";
-import AOS from "aos";
-import { useEffect } from "react";
-import Blogs from "./routes/Blogs";
-import SearchBlogs from "./routes/SearchBlogs";
-import About from "./routes/About";
-import Notfound from "./routes/Notfound";
-import ScrollToTopLayout from "./components/ScrollToTop";
+"use client"
+
+import "./App.css"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import Root from "./routes/root"
+import Footer from "./components/Footer"
+import AOS from "aos"
+import { useEffect } from "react"
+import Blogs from "./routes/Blogs"
+import SearchBlogs from "./routes/SearchBlogs"
+import Notfound from "./routes/Notfound"
+import ScrollToTopLayout from "./components/ScrollToTop"
+import Gallery from "./routes/Gallery" // Import the new Gallery component
 function App() {
   const router = createBrowserRouter([
     {
@@ -30,18 +32,22 @@ function App() {
           path: "blog/:title",
           element: <SearchBlogs />,
         },
+        {
+          path: "gallery", // Add the new gallery route
+          element: <Gallery />,
+        },
       ],
     },
-  ]);
+  ])
   useEffect(() => {
-    AOS.init();
-  }, []);
+    AOS.init()
+  }, [])
   return (
     <>
       <RouterProvider router={router} />
       <Footer />
     </>
-  );
+  )
 }
 
-export default App;
+export default App
