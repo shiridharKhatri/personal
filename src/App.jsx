@@ -10,7 +10,9 @@ import Blogs from "./routes/Blogs"
 import SearchBlogs from "./routes/SearchBlogs"
 import Notfound from "./routes/Notfound"
 import ScrollToTopLayout from "./components/ScrollToTop"
-import Gallery from "./routes/Gallery" // Import the new Gallery component
+import Gallery from "./routes/Gallery"
+import AllProducts from "./routes/AllProducts" // Import the new AllProducts component
+
 function App() {
   const router = createBrowserRouter([
     {
@@ -33,8 +35,12 @@ function App() {
           element: <SearchBlogs />,
         },
         {
-          path: "gallery", // Add the new gallery route
+          path: "gallery",
           element: <Gallery />,
+        },
+        {
+          path: "all-products", // Add the new route for all products
+          element: <AllProducts />,
         },
       ],
     },

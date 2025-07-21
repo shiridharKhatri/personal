@@ -1,4 +1,5 @@
 "use client"
+import Navbar from "../components/Navbar"
 import {
   FaShoppingCart,
   FaExternalLinkAlt,
@@ -13,23 +14,10 @@ import { SiNextdotjs, SiMongodb, SiTailwindcss } from "react-icons/si"
 import { AiFillHtml5 } from "react-icons/ai"
 import { IoLogoCss3 } from "react-icons/io5"
 import { BiLogoJavascript } from "react-icons/bi"
-import { Link } from "react-router-dom" // Assuming react-router-dom for navigation
+import "../style/product-showcase.css" // Reuse existing product card styles
 
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react"
-
-// Import Swiper styles
-import "swiper/css"
-import "swiper/css/pagination"
-import "swiper/css/navigation"
-
-// import required modules
-import { Pagination, Navigation } from "swiper/modules"
-
-import "../style/product-showcase.css"
-
-export default function ProductShowcase() {
-  const products = [
+export default function AllProducts() {
+   const products = [
     {
       id: 1,
       title: "E-commerce Platform",
@@ -117,47 +105,21 @@ export default function ProductShowcase() {
   }
 
   return (
-    <section className="product-showcase">
-      <div className="showcase-container">
-        <div className="showcase-header">
-          <div className="header-badge">
-            <FaRocket />
-            <span>Premium Products</span>
+    <>
+      <Navbar position="relative" />
+      <section className="product-showcase" style={{ paddingTop: "10rem" }}>
+        <div className="showcase-container">
+          <div className="showcase-header">
+            <h2>All Available Products</h2>
+            <p>Browse our full catalog of professional web solutions and templates.</p>
           </div>
-          <h2>Ready-to-Use Web Solutions</h2>
-          <p>Professional websites and templates at unbeatable prices. Save time and get your project online faster.</p>
-        </div>
 
-        <div className="products-wrapper">
-          <Swiper
-            slidesPerView={"auto"}
-            spaceBetween={30}
-            pagination={{
-              clickable: true,
-            }}
-            navigation={true}
-            modules={[Pagination, Navigation]}
-            className="mySwiper"
-            loop={true}
-            // centeredSlides={true}
-            breakpoints={{
-              640: {
-                slidesPerView: 1,
-                spaceBetween: 20,
-              },
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 40,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 50,
-              },
-            }}
-          >
-            {products.map((product) => (
-              <SwiperSlide key={product.id}>
-                <div className={`product-card ${product.cardClass}`}>
+          <div className="products-wrapper">
+            <div className="products-grid">
+              {" "}
+              {/* Removed inline style to use CSS */}
+              {products.map((product) => (
+                <div key={product.id} className={`product-card ${product.cardClass}`}>
                   <div className="card-header">
                     <div
                       className={`product-badge ${product.status === "available" ? "badge-available" : "badge-coming-soon"}`}
@@ -232,16 +194,11 @@ export default function ProductShowcase() {
                     </button>
                   </div>
                 </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          <div className="view-all-products-container">
-            <Link to="/all-products" className="view-all-products-btn">
-              View All Products
-            </Link>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }

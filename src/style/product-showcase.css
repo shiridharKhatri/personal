@@ -62,16 +62,74 @@
   line-height: 1.6;
 }
 
-/* Products Grid */
+/* Products Wrapper (for Swiper) */
 .products-wrapper {
   position: relative;
+  padding-bottom: 4rem; /* Space for pagination */
 }
 
+/* Swiper Container */
+.mySwiper {
+  width: 100%;
+  padding-bottom: 40px; /* Space for pagination dots */
+}
+
+.swiper-slide {
+  width: 350px; /* Default slide width */
+  height: auto;
+  display: flex; /* Ensure content is centered if smaller */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Swiper Navigation Buttons */
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--btn-text-color) !important;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 171, 225, 0.1);
+  transition: background 0.3s ease;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background: rgba(0, 171, 225, 0.2);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 2rem !important;
+}
+
+/* Swiper Pagination Dots */
+.swiper-pagination-bullet {
+  background: #ccc !important;
+  opacity: 1 !important;
+  width: 12px !important;
+  height: 12px !important;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--btn-text-color) !important;
+  transform: scale(1.2);
+}
+
+/* Products Grid (for AllProducts.jsx) */
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted minmax for more flexibility */
   gap: 2.5rem;
   margin-bottom: 4rem;
+}
+
+/* Ensure 4 columns on larger screens for AllProducts.jsx */
+@media (min-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr); /* Explicitly 4 columns */
+  }
 }
 
 /* Product Card Base */
@@ -83,6 +141,10 @@
   transition: all 0.3s ease;
   position: relative;
   backdrop-filter: blur(10px);
+  width: 100%; /* Ensure card takes full slide width or grid cell width */
+  height: 100%; /* Ensure card takes full slide height or grid cell height */
+  display: flex;
+  flex-direction: column;
 }
 
 .product-card:hover {
@@ -215,6 +277,9 @@
 /* Card Content */
 .card-content {
   padding: 2rem;
+  flex-grow: 1; /* Allow content to take available space */
+  display: flex;
+  flex-direction: column;
 }
 
 .product-header {
@@ -386,6 +451,7 @@
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  margin-top: auto; /* Push button to bottom */
 }
 
 .action-btn.available {
@@ -419,77 +485,38 @@
   left: 100%;
 }
 
-/* Navigation */
-.navigation {
-  display: flex;
+/* View All Products Button */
+.view-all-products-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.view-all-products-btn {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
-
-.nav-btn {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  border: none;
+  padding: 1.2rem 2.5rem;
+  border-radius: 50px;
   background: var(--btn-text-color);
   color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 171, 225, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 171, 225, 0.3);
 }
 
-.nav-btn:hover {
-  background: var(--btn-bg-color);
-  color: var(--btn-text-color);
-  transform: scale(1.1);
-  box-shadow: 0 8px 20px rgba(0, 171, 225, 0.3);
-}
-
-.slide-indicators {
-  display: flex;
-  gap: 1rem;
-}
-
-.indicator {
-  width: 1.2rem;
-  height: 1.2rem;
-  border-radius: 50%;
-  border: 2px solid var(--btn-text-color);
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.indicator.active {
-  background: var(--btn-text-color);
-  transform: scale(1.3);
-  box-shadow: 0 0 10px rgba(0, 171, 225, 0.5);
-}
-
-.indicator:hover {
-  transform: scale(1.2);
-}
-
-/* Footer */
-.showcase-footer {
-  text-align: center;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.showcase-footer p {
-  font-size: 1.4rem;
-  color: var(--color);
-  opacity: 0.7;
+.view-all-products-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 171, 225, 0.4);
+  background: #0099cc;
 }
 
 /* Responsive Design */
 @media (max-width: 1200px) {
+  /* For AllProducts.jsx, the auto-fit will handle it */
   .products-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 }
 
@@ -504,6 +531,11 @@
 
   .features-list {
     grid-template-columns: 1fr;
+  }
+
+  /* For AllProducts.jsx */
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust for tablets */
   }
 }
 
@@ -524,9 +556,13 @@
     font-size: 1.5rem;
   }
 
-  .products-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .swiper-slide {
+    width: 80% !important; /* Adjust slide width for mobile */
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important; /* Hide navigation buttons on small screens */
   }
 
   .product-header h3 {
@@ -543,14 +579,9 @@
     text-align: center;
   }
 
-  .navigation {
-    gap: 1rem;
-  }
-
-  .nav-btn {
-    width: 3.5rem;
-    height: 3.5rem;
-    font-size: 1.3rem;
+  /* For AllProducts.jsx */
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust for smaller tablets/large phones */
   }
 }
 
@@ -587,5 +618,14 @@
   .action-btn {
     font-size: 1.3rem;
     padding: 1.2rem 1.5rem;
+  }
+
+  .swiper-slide {
+    width: 90% !important; /* Further adjust slide width for very small screens */
+  }
+
+  /* For AllProducts.jsx */
+  .products-grid {
+    grid-template-columns: 1fr; /* Single column on small phones */
   }
 }
