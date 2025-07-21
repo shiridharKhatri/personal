@@ -189,14 +189,14 @@ export default function Footer(props) {
                   Pokhara, Nepal
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <span>
                   {" "}
                   <IoIcons.IoCall />
                 </span>
 
                 <a href="tel:+9779820610923">+9779820610923</a>
-              </li>
+              </li> */}
               <li>
                 <span>
                   {" "}
@@ -204,6 +204,15 @@ export default function Footer(props) {
                 </span>
                 <a href="mailto:khatrishiridhar6@gmail.com">
                   shiridharkhatri2@gmail.com
+                </a>
+              </li>
+              <li>
+                <span>
+                  {" "}
+                  <IoIcons.IoMail />
+                </span>
+                <a href="mailto:contact@shiridhar.com.np">
+                  contact@shiridhar.com.np
                 </a>
               </li>
             </ul>

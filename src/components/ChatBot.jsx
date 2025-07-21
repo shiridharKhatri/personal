@@ -54,7 +54,7 @@ export default function ChatBot() {
     - **Skills**: HTML5, CSS3, JavaScript (ES6+), ReactJS, Next.js, Node.js, Express.js, MongoDB, SQL, AWS (EC2, S3, Lambda), Git.
     - **Experience**: 3+ years, 100+ completed projects, 4.9/5 star rating.
     - **Projects**: E-commerce brands (like Manifest & Elevate), admin dashboards, real-time chat apps.
-    - **Contact**: shiridharkhatri2@gmail.com, shiridhar.dev@gmail.com, Upwork, LinkedIn, GitHub.
+    - **Contact**: shiridharkhatri2@gmail.com, shiridhar.dev@gmail.com, contact@shiridhar.com.np, Upwork, LinkedIn, GitHub.
     - **Pricing**: Starts from $280 for business websites and $310 for e-commerce. Offers custom quotes.
     - **Process**: Discovery -> Design -> Development -> Testing & Launch.
     - **Education**: Studying IT at London Metropolitan University.
