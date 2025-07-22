@@ -7,6 +7,8 @@ import {
   FaIcons,
   GrIcons,
 } from "../tools/icons";
+import {  SiTailwindcss, SiAmazonaws } from "react-icons/si";
+
 export default function Expertise() {
   const content = [
     {
@@ -44,27 +46,28 @@ export default function Expertise() {
       discription: "",
       link: "https://www.mongodb.com/",
     },
-    {
-      icon: <IoIcons.IoLogoCss3 />,
-      name: "CSS",
-      color: "#264de4",
-      discription: "",
-      link: "",
-    },
+
     {
       icon: <BiIcons.BiLogoJavascript />,
       name: "JavaScript",
       color: "#F0DB4F",
       discription: "",
       link: "https://www.javascript.com/",
-    },
-    {
-      icon: <AiIcons.AiFillHtml5 />,
-      name: "HTML",
-      color: "#ea4335",
-      discription: "",
-      link: "https://html.com/",
-    },
+    }, {
+    icon: <SiAmazonaws />,
+    name: "AWS",
+    color: "#FF9900",
+    discription: "",
+    link: "https://aws.amazon.com/",
+  },
+  {
+    icon: <SiTailwindcss />,
+    name: "Tailwind CSS",
+    color: "#38B2AC",
+    discription: "",
+    link: "https://tailwindcss.com/",
+  },
+ 
   ];
   function openNewWindow(link) {
     window.open(link, "_blank");
