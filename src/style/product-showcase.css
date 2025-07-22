@@ -607,10 +607,6 @@
     justify-content: center;
   }
 
-  .product-image {
-    height: 200px;
-  }
-
   .current-price {
     font-size: 2rem;
   }
